@@ -23,7 +23,7 @@ const Navbar = () => {
             </ul>
         </div>
         {/* Button */}
-        <div className='hidden'>
+        <div className='hidden md:flex'>
             <Link className='bg-[#FF9606] text-white px-4 py-3 rounded-full cursor-pointer'>Connect Wallet</Link>
         </div>
 

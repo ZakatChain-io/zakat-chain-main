@@ -7,15 +7,15 @@ import SecureSeamlessCryptoImg from "../assets/secure-seamless-crypto-integratio
 
 const HeroCarousel = () => {
     const slides = [
-        {url:  `${BitcoinImg}`, text: "The Future of Zakat Payment"},
-        {url: `${HijabiImg}`, text: "The Future of Zakat Payment"},
-        {url: `${YourSadaqahTheirHopeImg}`, text: "Your Sadaqah Their Hope"},
-        {url: `${SecureSeamlessCryptoImg}`, text: "Secure and Seamless Crypto Integration"},
+        {url:  `${BitcoinImg}`, text: "The Future of Zakat Payment", subText: "Simplify your zakat payments and experience the seamless integration of web3 technology."},
+        {url: `${HijabiImg}`, text: "The Future of Zakat Payment", subText: "Simplify your zakat payments and experience the seamless integration of web3 technology."},
+        {url: `${YourSadaqahTheirHopeImg}`, text: "Your Sadaqah Their Hope", subText: "Your Sadaqah directly supports worthy causes and empower underprivileged Muslims. "},
+        {url: `${SecureSeamlessCryptoImg}`, text: "Secure and Seamless Crypto Integration", subText: "Zakat Chain seamlessly integrates your crypto wallet, allowing you to fulfill your Zakat obligations and donate Sadaqah with ease"},
       ]
   return (
     <div className=''>
         <div className='h-96'>
-            <ImageSlider slides={slides}/>
+            <ImageSlider slides={slides} />
         </div>
     </div>
   )
