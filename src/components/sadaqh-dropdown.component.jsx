@@ -14,9 +14,9 @@ const SadaqhDropdown = () => {
   }
   return (
     <div className='bg-[#17163E] rounded-lg md:px-7'>
-      <div className='pt-2 px-3 flex justify-between mt-5 space-x-4 md:space-x-0'>
+      <div className='pt-2 px-1 flex justify-between mt-5 space-x-4 sm:px-3 md:space-x-0'>
         <div className='flex gap-x-1'>
-            <span><Logo /></span>
+            <span><Logo className='w-10 sm:w-auto'/></span>
             <span className='text-2xl font-bold text-white self-center md:text-4xl'>Sadaqah</span>
         </div>
         <div className='text-white text-2xl self-center -ml-10 md:text-4xl'>
@@ -24,7 +24,7 @@ const SadaqhDropdown = () => {
         </div>
 
         <div className='self-center'>
-            <Link className='bg-white rounded-full py-2 px-6'>Pay Now</Link>
+            <Link className='bg-white rounded-full py-2 px-2 sm:px-6'>Pay Now</Link>
         </div>
       </div>
 

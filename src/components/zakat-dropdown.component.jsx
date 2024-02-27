@@ -13,14 +13,14 @@ const ZakatDropdown = () => {
       <div className='relative py-2 px-3 flex justify-between mt-3'>
         <div className='flex gap-x-1'>
             <span><Logo /></span>
-            <span className='text-4xl font-bold text-white self-center'>Zakat</span>
+            <span className='text-2xl font-bold text-white self-center sm:text-4xl'>Zakat</span>
         </div>
         <div className='text-white text-4xl self-center'>
         زكاة
         </div>
 
         <div className='self-center'>
-            <Link className='bg-white rounded-full py-2 px-6'>Pay Now</Link>
+            <Link className='bg-white rounded-full py-2 px-2 sm:px-6'>Pay Now</Link>
         </div>
         
       </div>
