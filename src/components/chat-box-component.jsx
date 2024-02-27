@@ -40,7 +40,7 @@ const ChatBoxComponent = ({setShowChatBox}) => {
         setImage(url);
     }
   return (
-    <div className='absolute w-[40%] right-10 -top-80 z-30'>
+    <div className='absolute w-[90%] right-5 sm:right-10 -top-80 z-30 md:w-[40%] sm:w-[70%]'>
         <div className='px-6 pt-3 pb-6 bg-[#FF9606] flex justify-between'>
             <div className='flex relative'>
                 <div className='absolute -top-7 -left-2 px-4 py-4 rounded-[100%] border-2 border-[#FF9606] bg-white'>
@@ -90,7 +90,7 @@ const ChatBoxComponent = ({setShowChatBox}) => {
                 {image && <img src={image} alt="preview" className='h-10 w-10 object-cover'/>}
             <div className=''>
                 <form>
-                    <textarea type='text' cols={40} rows={1} onChange={handleChatBoxTextAreaChange} value={chatBoxTextArea.message} className='resize-none focus:outline-none' placeholder='Type your message here...'>
+                    <textarea type='text' rows={1} onChange={handleChatBoxTextAreaChange} value={chatBoxTextArea.message} className='resize-none focus:outline-none' placeholder='Type your message here...'>
                     </textarea>
                 </form>
             </div>
