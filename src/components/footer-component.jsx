@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {ReactComponent as MessageIcon} from '../assets/message-icon.svg';
 import {ReactComponent as FooterZakatIcon} from '../assets/footer-zakat-chain-logo.svg';
+import ChatBoxComponent from './chat-box-component';
+
 
 const Footer = () => {
+    const [shouldShowChatBox, setShowChatBox] = useState(false)
+    const handleMessageIconClick = () => {
+        setShowChatBox(!shouldShowChatBox)
+    }
   return (
     <>
     <div className='relative bg-[#F7F9FC] py-14 px-10 mt-3 border-b-2 border-[#E4E7EC]'>
-        <div className='absolute bottom-5 right-10 sm:top-15 sm:bottom-auto'>
+        {/* CHAT SECTION */}
+        {
+            shouldShowChatBox && (
+                <ChatBoxComponent setShowChatBox={setShowChatBox}/>
+            )
+        }
+        <div className='absolute bottom-5 right-10 sm:top-15 sm:bottom-auto cursor-pointer' onClick={handleMessageIconClick}>
             <MessageIcon />
         </div>
         <div className='mb-16 sm:w-[60%] sm:mx-auto'>
@@ -99,5 +111,9 @@ const LinkedInIcon = () => {
 
     )
 }
+
+
+
+
 
 export default Footer;
