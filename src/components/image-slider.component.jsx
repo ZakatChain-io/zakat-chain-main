@@ -27,7 +27,7 @@ const ImageSlider = ({slides, children}) => {
         </div>
         <div className='w-full h-full bg-center bg-cover' style={{backgroundImage: `url(${slides[currentIndex].url})`}}>
             <div className='bg-black bg-opacity-55 h-full'>
-                <div className=' py-28 pl-20 w-full md:w-[50%]'>
+                <div className=' py-28 text-center w-[80%] mx-auto md:mx-0 md:text-left md:pl-20 md:w-[50%]'>
                     <div className='text-white text-4xl font-bold'>
                         <h1>{slides[currentIndex].text}</h1>
                     </div>

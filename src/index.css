@@ -63,3 +63,16 @@ code {
   /* left: 50%; */
   /* transform: translate(-50%, -50%); */
 }
+.connectButton {
+  background-color: #ff9606 !important;
+  color: white !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+  cursor: pointer !important;
+}
+.connectButton:hover {
+  box-shadow: 0px 0px 15px 2px #8e530051 !important;
+  transform: translateY(-2px) !important;
+}

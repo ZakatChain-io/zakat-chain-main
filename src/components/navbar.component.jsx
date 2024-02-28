@@ -50,6 +50,7 @@ const Navbar = () => {
         {/* </Link> */}
       </div>
 
+<<<<<<< HEAD
       {/* Mobile Menu */}
       <div className=" flex gap-x-4 md:hidden">
         <div className="">
@@ -76,6 +77,15 @@ const Navbar = () => {
             className="connectButton bg-[#FF9606] text-white px-4 py-3 rounded-full cursor-pointer"
           />
           {/* </Link> */}
+=======
+        {/* Mobile Menu */}
+        <div className=' flex gap-x-4 md:hidden'>
+            <div className='cursor-pointer' onClick={handleClick}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 block md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </div>
+>>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
         </div>
         <div className="cursor-pointer" onClick={handleClick}>
           <svg
@@ -95,6 +105,7 @@ const Navbar = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
       {isOpen && (
         <div className="absolute bg-white top-[100%] z-30 right-0 border-t border-[#FF9606]">
           <ul className="flex flex-col space-y-4 py-3 md:hidden">
@@ -116,6 +127,22 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+=======
+        {
+            isOpen && (
+                <div className='absolute flex flex-col bg-white top-[100%] z-30 right-0 border-t border-[#FF9606] gap-y-4'>
+                    <ul className='flex flex-col space-y-4 py-3'>
+                        <Link><li className='px-10 hover:border-b hover:border-gray-500'>Home</li></Link>
+                        <Link><li className='px-10 hover:border-b hover:border-gray-500'>Showcase</li></Link>
+                        <Link><li className='px-10 hover:border-b hover:border-gray-500'>About Us</li></Link>
+                    </ul>
+                    <div className='px-8 pb-4'>
+                        <Link className='bg-[#FF9606] text-white px-4 py-3 rounded-full cursor-pointer'>Connect Wallet</Link>
+                    </div>
+                </div>
+            )
+        }
+>>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
     </nav>
   );
 };
