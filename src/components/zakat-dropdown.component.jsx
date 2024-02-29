@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/zakat-dropdown-logo.svg";
 import { ReactComponent as DropdownIcon } from "../assets/dropdown-icon.svg";
 import { Link } from "react-router-dom";
-// import { page } from "../routes/pay/page";
 
 const ZakatDropdown = () => {
   const [isDropped, setIsDropped] = useState(false);
@@ -10,38 +9,22 @@ const ZakatDropdown = () => {
     setIsDropped(!isDropped);
   };
   return (
-<<<<<<< HEAD
     <div className="bg-[#FF9606] rounded-lg md:px-7">
       <div className="relative py-2 px-3 flex justify-between mt-3">
         <div className="flex gap-x-1">
           <span>
             <Logo />
           </span>
-          <span className="text-4xl font-bold text-white self-center">
+          <span className="text-2xl font-bold text-white self-center sm:text-4xl">
             Zakat
           </span>
-=======
-    <div className='bg-[#FF9606] rounded-lg md:px-7'>
-      <div className='relative py-2 px-3 flex justify-between mt-3'>
-        <div className='flex gap-x-1'>
-            <span><Logo /></span>
-            <span className='text-2xl font-bold text-white self-center sm:text-4xl'>Zakat</span>
-        </div>
-        <div className='text-white text-4xl self-center'>
-        زكاة
->>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
         </div>
         <div className="text-white text-4xl self-center">زكاة</div>
 
-<<<<<<< HEAD
         <div className="self-center">
-          <Link to="/pay" className="bg-white rounded-full py-2 px-6">
+          <Link to="/pay" className="bg-white rounded-full py-2 px-2 sm:px-6">
             Pay Now
           </Link>
-=======
-        <div className='self-center'>
-            <Link className='bg-white rounded-full py-2 px-2 sm:px-6'>Pay Now</Link>
->>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
         </div>
       </div>
 

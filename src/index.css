@@ -76,3 +76,59 @@ code {
   box-shadow: 0px 0px 15px 2px #8e530051 !important;
   transform: translateY(-2px) !important;
 }
+.img-cont {
+  position: relative;
+  margin: 100px;
+  border-radius: 30px;
+  display: inline-block;
+  width: 400px;
+  transform: rotate(-30deg);
+  @media (max-width: 768px) {
+    width: 300px; /* Set width to 100% for mobile screens */
+  }
+}
+
+.img-cont img {
+  width: 400px;
+  max-width: 100%;
+  aspect-ratio: 1.5;
+  border-radius: inherit;
+  display: block;
+  border: 8px solid yellow;
+}
+
+.img-cont:before {
+  content: "";
+  background-color: #ff9606;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  bottom: 20px;
+  right: 40px;
+  transform: rotate(5deg);
+  border-radius: inherit;
+}
+.nft_page {
+  position: relative;
+  background: url("./assets/feed-the-poor.png") center/cover no-repeat;
+  overflow: hidden;
+  color: black; /* Text color */
+}
+
+.nft_page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8); /* White-like background with opacity */
+  /* filter: blur(10px); Adjust the blur amount as needed */
+}
+
+.nft_page h1,
+.nft_page h2,
+.nft_page p {
+  z-index: 1; /* Ensure text appears above the blurred background */
+}

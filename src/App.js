@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./routes/Home/Home";
 import Page from "./routes/pay/page";
 import Donate from "./routes/donate/page";
+import About from "./routes/about/page";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pay" element={<Page />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </ThirdwebProvider>
     </div>

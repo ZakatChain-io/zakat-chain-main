@@ -6,7 +6,6 @@ import SupportAnOrphan from "../assets/support-an-orphan-through-school.png";
 import ProvideAccessToClean from "../assets/provide-access-to-clean-and-safe-water.png";
 import HelpTreatASickMuslim from "../assets/help-treat-a-sick-muslim.png";
 import { Link } from "react-router-dom";
-// import page from "../routes/pay/page";
 
 const SadaqhDropdown = () => {
   const [isDropped, setIsDropped] = useState(false);
@@ -14,37 +13,24 @@ const SadaqhDropdown = () => {
     setIsDropped(!isDropped);
   };
   return (
-<<<<<<< HEAD
     <div className="bg-[#17163E] rounded-lg md:px-7">
-      <div className="pt-2 px-3 flex justify-between mt-5 space-x-4 md:space-x-0">
+      <div className="pt-2 px-1 flex justify-between mt-5 space-x-4 sm:px-3 md:space-x-0">
         <div className="flex gap-x-1">
           <span>
-            <Logo />
+            <Logo className="w-10 sm:w-auto" />
           </span>
           <span className="text-2xl font-bold text-white self-center md:text-4xl">
             Sadaqah
           </span>
-=======
-    <div className='bg-[#17163E] rounded-lg md:px-7'>
-      <div className='pt-2 px-1 flex justify-between mt-5 space-x-4 sm:px-3 md:space-x-0'>
-        <div className='flex gap-x-1'>
-            <span><Logo className='w-10 sm:w-auto'/></span>
-            <span className='text-2xl font-bold text-white self-center md:text-4xl'>Sadaqah</span>
->>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
         </div>
         <div className="text-white text-2xl self-center -ml-10 md:text-4xl">
           صدقات
         </div>
 
-<<<<<<< HEAD
         <div className="self-center">
-          <Link to="./routes/pay" className="bg-white rounded-full py-2 px-6">
+          <Link to="/pay" className="bg-white rounded-full py-2 px-2 sm:px-6">
             Pay Now
           </Link>
-=======
-        <div className='self-center'>
-            <Link className='bg-white rounded-full py-2 px-2 sm:px-6'>Pay Now</Link>
->>>>>>> addb7f1c1a3ede17fe54aadbecaea409a2bc665f
         </div>
       </div>
 
@@ -67,7 +53,10 @@ const SadaqhDropdown = () => {
                   “He who feeds a hungry person will be fed by Allah on the Day
                   of Resurrection” (Al-Tirmidhi).
                 </p>
-                <Link className="bg-white text-black rounded-full px-3 py-1 self-start">
+                <Link
+                  to="/donate"
+                  className="bg-white text-black rounded-full px-3 py-1 self-start"
+                >
                   Donate
                 </Link>
               </div>
@@ -90,7 +79,10 @@ const SadaqhDropdown = () => {
                   “Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
                   Empower an orphan fulfill their educational aspirations.
                 </p>
-                <Link className="bg-white text-black rounded-full px-3 py-1 self-start">
+                <Link
+                  to="/donate"
+                  className="bg-white text-black rounded-full px-3 py-1 self-start"
+                >
                   Donate
                 </Link>
               </div>
@@ -113,7 +105,10 @@ const SadaqhDropdown = () => {
                   "The best form of charity is giving water to drink." (Ibn
                   Majah)
                 </p>
-                <Link className="bg-white text-black rounded-full px-3 py-1 self-start">
+                <Link
+                  to="/donate"
+                  className="bg-white text-black rounded-full px-3 py-1 self-start"
+                >
                   Donate
                 </Link>
               </div>
@@ -135,7 +130,10 @@ const SadaqhDropdown = () => {
                 <p className="text-white">
                   Treat your sick ones with charity.” (Saheeh al-Jaami)
                 </p>
-                <Link className="bg-white text-black rounded-full px-3 py-1 self-start">
+                <Link
+                  to="/donate"
+                  className="bg-white text-black rounded-full px-3 py-1 self-start"
+                >
                   Donate
                 </Link>
               </div>
