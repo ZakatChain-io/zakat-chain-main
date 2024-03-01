@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "../../components/navbar.component";
 import Footer from "../../components/footer-component";
 // import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
-import tap from "../../assets/provide-access-to-clean-and-safe-water.png";
+import tap from "../../assets/giving.jpeg";
+import clap from "../../assets/clapping.jpeg";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
         <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
           <div className=" md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-2 ">
             <div className="!gap-3 justify-start ">
-              <h1 className=" text-3xl sm:text-4xl font-bold ">What we are?</h1>
+              <h1 className=" text-3xl sm:text-4xl font-bold ">Who we are?</h1>
               <p className="mt-6 text-gray-800 justify-start leading-8 sm:text-2xl text-xl font-semibold">
                 ZakatChain is a platform that leverages the power of blockchain
                 technology to facilitate safe, efficient and transparent Zakat &
@@ -51,7 +52,7 @@ const About = () => {
 
           <div className=" md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-2 my-16">
             <div className="w-auto justify-center items-center">
-              <img src={tap} alt="how we operate" />
+              <img src={clap} alt="how we operate" className="rounded-xl" />
             </div>
             <div className="!gap-3 !justify-start ">
               <h1 className="text-2xl sm:text-4xl font-bold">

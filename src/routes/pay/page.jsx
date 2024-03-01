@@ -202,7 +202,7 @@ const Page = () => {
           </div>
           <div className="text-center sm:ml-auto">
             <p>
-              © 2023 . Powered by{" "}
+              © 2024 . Powered by{" "}
               <span className="text-[#17163E] font-semibold">ZakatChain</span>.
               All Rights Reserved.
             </p>
