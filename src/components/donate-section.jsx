@@ -41,8 +41,8 @@ const Donation = () => {
                 className="w-full h-full rounded-lg"
               />
             </div>
-            <div className="flex flex-col gap-3 items-start">
-              <h2 className="text-2xl sm:text-4xl font-bold p-3 items-start">
+            <div className="flex flex-col sm:gap-3  items-start">
+              <h2 className="text-xl sm:text-4xl font-bold p-3 items-start">
                 {detail.topic}
               </h2>
               <p className="text-sm sm:text-md p-2 items-start sm:leading-7">
@@ -56,16 +56,16 @@ const Donation = () => {
             </div>
             <input
               id="file"
-              class=" p-5 rounded-lg my-5 w-full border border-gray-700"
+              class=" p-3 sm:p-5 rounded-lg my-5 w-full border border-gray-700"
             />
             <div className="percentages justify-center items-center gap-5 flex flex-row">
-              <button className="rounded-full py-3.5 px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
                 25 USDT
               </button>
-              <button className="rounded-full py-3.5 px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
                 50 USDT
               </button>
-              <button className="rounded-full py-3.5 px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block">
                 100 USDT
               </button>
             </div>
@@ -74,11 +74,11 @@ const Donation = () => {
             <label className="text-gray-700 ">Message </label>
             <input
               id="file"
-              class=" p-5 rounded-lg my-5  border border-gray-700"
+              class=" p-3 sm:p-5 rounded-lg my-5  border border-gray-700"
               placeholder="(optional)"
             />
             <div className="!justify-end !items-end !flex">
-              <button className=" rounded-full py-3.5 px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto">
+              <button className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto">
                 Donate
               </button>
             </div>
