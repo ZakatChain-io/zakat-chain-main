@@ -13,7 +13,7 @@ const About = () => {
           <div className=" md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-2 ">
             <div className="!gap-3 justify-start ">
               <h1 className=" text-3xl sm:text-4xl font-bold ">What we are?</h1>
-              <p className="mt-6 text-gray-800 justify-start leading-8 text-2xl font-semibold">
+              <p className="mt-6 text-gray-800 justify-start leading-8 sm:text-2xl text-xl font-semibold">
                 ZakatChain is a platform that leverages the power of blockchain
                 technology to facilitate safe, efficient and transparent Zakat &
                 Sadaqah payments and disbursements.
@@ -35,7 +35,7 @@ const About = () => {
             <h2 className="text-2xl sm:text-3xl font-semibold">
               ZakatChain is born out of the pristine Islamic spirit.
             </h2>
-            <p className=" leading-7 font-semibold ">
+            <p className="leading-5 sm:leading-7 font-semibold text-md sm:text-xl">
               Every day, 25,000 people including over 10,000 people die from
               hunger and poverty. That's more 15 deaths per minute, causing more
               casualties than any war or disaster witnessed on earth. As Muslims
@@ -57,7 +57,7 @@ const About = () => {
               <h1 className="text-2xl sm:text-4xl font-bold">
                 How we operate:
               </h1>
-              <p className="mt-6 text-gray-800 justify-start leading-8 text-2xl font-semibold">
+              <p className="mt-6 text-gray-800 justify-start leading-8 text-xl md:text-2xl font-semibold">
                 Through our easy to navigate platform, we get Zakat & Sadaqah
                 through to those who need it regardless of their location and
                 according to their needs.

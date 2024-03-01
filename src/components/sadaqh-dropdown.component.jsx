@@ -143,12 +143,12 @@ const SadaqhDropdown = () => {
         <div className="flex items-center justify-center">
           {isDropped ? (
             <DropdownIcon
-              className="ml-10 cursor-pointer rotate-180"
+              className="ml-10 cursor-pointer"
               onClick={handleDropdown}
             />
           ) : (
             <DropdownIcon
-              className="ml-10 cursor-pointer"
+              className="ml-10 cursor-pointer rotate-180"
               onClick={handleDropdown}
             />
           )}

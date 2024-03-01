@@ -13,7 +13,9 @@ const Navbar = () => {
     <nav className="relative flex justify-between py-3 items-center">
       {/* Logo */}
       <div>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       {/* Links */}
       <div className="hidden md:block">
