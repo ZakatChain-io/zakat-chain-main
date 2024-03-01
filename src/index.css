@@ -24,11 +24,9 @@ code {
 
   /* perspective: 1000px; */
 }
-.cont span {
+/* .cont span {
   padding: 80px;
   border-radius: 50%;
-  /* background-image: url(../public/images/black_n_white.jpeg); */
-  /* background-image: url(/public/images/); */
   border: 1px solid black;
   z-index: 99;
   background: red;
@@ -36,17 +34,16 @@ code {
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   display: inline-block;
-  width: 100px; /* Adjust the size as needed */
-  height: 100px; /* Adjust the size as needed */
+  width: 100px; 
+  height: 100px; 
   background-size: cover;
   background-position: center;
-}
+} */
 .cont p {
   padding: 20px;
   position: absolute;
-  top: 150%;
+  top: 180%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

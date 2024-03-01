@@ -18,9 +18,13 @@ const Navbar = () => {
       {/* Links */}
       <div className="hidden md:block">
         <ul className="flex space-x-6">
-          <li>Home</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
           <li>Showcase</li>
-          <li>About Us</li>
+          <Link to="/about">
+            <li>About Us</li>
+          </Link>
         </ul>
       </div>
       {/* Button */}
@@ -98,7 +102,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute bg-white top-[100%] z-30 right-0 border-t border-[#FF9606]">
           <ul className="flex flex-col space-y-4 py-3 md:hidden">
-            <Link>
+            <Link to="/">
               <li className="px-10 hover:border-b hover:border-gray-500">
                 Home
               </li>
@@ -108,7 +112,7 @@ const Navbar = () => {
                 Showcase
               </li>
             </Link>
-            <Link>
+            <Link to="/about">
               <li className="px-10 hover:border-b hover:border-gray-500">
                 About Us
               </li>

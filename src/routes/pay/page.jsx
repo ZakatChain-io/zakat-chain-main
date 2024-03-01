@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../components/footer-component";
+import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 
@@ -97,20 +98,52 @@ const Page = () => {
   };
   return (
     <div>
-      <div className="">
+      <div className=" mb-[400px]">
         <div className="cont">
-          <span className="">
-            {/* <Image src={bnw} alt="user icon" className="w-full" /> */}
+          <span
+            style={{
+              borderRadius: "50%",
+              border: "4px solid white",
+              zIndex: "99",
+              position: "absolute",
+              top: "100%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              display: "inline-block",
+              width: "230px", // Increase the width
+              height: "230px", // Increase the height
+            }}
+          >
+            <img
+              src={circle}
+              alt="user icon"
+              className="w-full h-full object-cover rounded-full"
+            />
           </span>
 
           <p>0xbaFC....9573</p>
         </div>
-        <div className="w-[auto] justify-center sec_div mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container px-10 mb-14">
+        <div className="w-[auto] justify-center sec_div mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container px-10 mb-14 mt-10">
           <div className=" text-sm flex flex-col sub">
             <label className="text-gray-700 ">
               Zakat Amount <span>(2.5% of total asset)</span>{" "}
             </label>
-            <input id="file" class=" p-5 rounded-lg my-5  border" />
+
+            <div className="flex justify-between p-2 rounded-lg my-5  border">
+              <input id="file" class="w-full border-none p-5" />
+              <div className="flex justify-end">
+                <select
+                  id="country"
+                  name="country"
+                  autocomplete="country-name"
+                  class="block py-3 px-6  rounded-xl border-none bg-blue-200 mx-3  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>USDT</option>
+                  <option>USDC</option>
+                  <option>BNB</option>
+                </select>
+              </div>
+            </div>
 
             <label className="text-gray-700 ">Message </label>
             <input
