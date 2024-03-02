@@ -12,6 +12,31 @@ const SadaqhDropdown = () => {
   const handleDropdown = () => {
     setIsDropped(!isDropped);
   };
+  const details = [
+    {
+      topic: "Feed The Poor",
+      subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
+      of Resurrection” (Al-Tirmidhi).`,
+      img: FeedThePoor,
+    },
+    {
+      topic: "Support an orphan through school",
+      subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
+      Empower an orphan fulfill their educational aspirations.`,
+      img: SupportAnOrphan,
+    },
+    {
+      topic: "Provide access to clean and safe water",
+      subTopic: `"The best form of charity is giving water to drink." (Ibn
+        Majah)`,
+      img: ProvideAccessToClean,
+    },
+    {
+      topic: "Help treat a sick Muslim",
+      subTopic: `"Treat your sick ones with charity." (Saheeh al-Jaami)`,
+      img: HelpTreatASickMuslim,
+    },
+  ];
   return (
     <div className="bg-[#17163E] rounded-lg md:px-7">
       <div className="pt-2 px-1 flex justify-between mt-5 space-x-4 sm:px-3 md:space-x-0">
@@ -40,107 +65,39 @@ const SadaqhDropdown = () => {
       <div className="flex flex-col">
         {isDropped && (
           <div className="border-t border-white mt-5 px-3">
-            <div className="flex mt-5">
-              {/* IMAGE */}
-              <div className="h-32">
-                <img
-                  src={FeedThePoor}
-                  alt="feed-the-poor"
-                  className="h-full w-full"
-                />
+            {details.map((detail, index) => (
+              <div className="flex flex-row p-4">
+                <div className="flex flex-col">
+                  <div className="h-32 sm:h-40">
+                    <img
+                      src={detail.img}
+                      alt="feed-the-poor"
+                      className="h-full w-full"
+                    />
+                  </div>
+                  <Link
+                    to="/donate"
+                    className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
+                  >
+                    Donate
+                  </Link>
+                </div>
+                <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-8 md:ml-32 ">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-white">
+                    {detail.topic}
+                  </h1>
+                  <p className="text-gray-200 w-full text-sm sm:text-lg">
+                    {detail.subTopic}
+                  </p>
+                  <Link
+                    to="/donate"
+                    className="bg-white text-black rounded-full px-3 py-1 sm:px-5 sm:py-3 text-lg self-start sm:block hidden "
+                  >
+                    Donate
+                  </Link>
+                </div>
               </div>
-              {/* SIDE TEXT */}
-              <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-20">
-                <h4 className="text-2xl font-bold text-white">Feed The Poor</h4>
-                <p className="text-white">
-                  “He who feeds a hungry person will be fed by Allah on the Day
-                  of Resurrection” (Al-Tirmidhi).
-                </p>
-                <Link
-                  to="/donate"
-                  className="bg-white text-black rounded-full px-3 py-1 self-start"
-                >
-                  Donate
-                </Link>
-              </div>
-            </div>
-            <div className="flex mt-5">
-              {/* IMAGE */}
-              <div className="h-32">
-                <img
-                  src={SupportAnOrphan}
-                  alt="feed-the-poor"
-                  className="h-full w-full"
-                />
-              </div>
-              {/* SIDE TEXT */}
-              <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-20">
-                <h4 className="text-2xl font-bold text-white">
-                  Support an Orphan through school
-                </h4>
-                <p className="text-white">
-                  “Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
-                  Empower an orphan fulfill their educational aspirations.
-                </p>
-                <Link
-                  to="/donate"
-                  className="bg-white text-black rounded-full px-3 py-1 self-start"
-                >
-                  Donate
-                </Link>
-              </div>
-            </div>
-            <div className="flex mt-5">
-              {/* IMAGE */}
-              <div className="h-32">
-                <img
-                  src={ProvideAccessToClean}
-                  alt="feed-the-poor"
-                  className="h-full w-full"
-                />
-              </div>
-              {/* SIDE TEXT */}
-              <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-20">
-                <h4 className="text-2xl font-bold text-white">
-                  Provide access to clean and safe water
-                </h4>
-                <p className="text-white">
-                  "The best form of charity is giving water to drink." (Ibn
-                  Majah)
-                </p>
-                <Link
-                  to="/donate"
-                  className="bg-white text-black rounded-full px-3 py-1 self-start"
-                >
-                  Donate
-                </Link>
-              </div>
-            </div>
-            <div className="flex mt-5">
-              {/* IMAGE */}
-              <div className="h-32">
-                <img
-                  src={HelpTreatASickMuslim}
-                  alt="feed-the-poor"
-                  className="h-full w-full"
-                />
-              </div>
-              {/* SIDE TEXT */}
-              <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-20">
-                <h4 className="text-2xl font-bold text-white">
-                  Help treat a sick Muslim
-                </h4>
-                <p className="text-white">
-                  Treat your sick ones with charity.” (Saheeh al-Jaami)
-                </p>
-                <Link
-                  to="/donate"
-                  className="bg-white text-black rounded-full px-3 py-1 self-start"
-                >
-                  Donate
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         )}
         <div className="flex items-center justify-center">

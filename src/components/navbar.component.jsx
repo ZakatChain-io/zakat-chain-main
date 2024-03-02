@@ -23,7 +23,7 @@ const Navbar = () => {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <li>Showcase</li>
+          <li id="showcase">Showcase</li>
           <Link to="/about">
             <li>About Us</li>
           </Link>
@@ -110,8 +110,11 @@ const Navbar = () => {
               </li>
             </Link>
             <Link>
-              <li className="px-10 hover:border-b hover:border-gray-500">
-                Showcase
+              <li
+                id="showcase"
+                className="px-10 hover:border-b hover:border-gray-500"
+              >
+                <a href="#showcase">Showcase</a>
               </li>
             </Link>
             <Link to="/about">

@@ -13,8 +13,7 @@ const Donation = () => {
   const details = [
     {
       topic: "Donate to the poor",
-      subTopic:
-        "He who feeds an hungry person would be fed by Allah on the day of resurrection",
+      subTopic: `"He who feeds an hungry person would be fed by Allah on the Day of Resurrection" (Al Tirmidhi)`,
       img: sick,
     },
     {
@@ -38,9 +37,9 @@ const Donation = () => {
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
       {details.map((detail, index) => (
-        <div className="p-5 my-16 border rounded-lg">
+        <div className="p-5 sm:my-12 my-8 border rounded-lg">
           <div className="  p-2 sm:p-6 justify-between rounded-lg text-black grid grid-cols-2 gap-4 items-center xl:gap-16 sm:py-8 xl:px-12 ">
-            <div className="m-auto sm:h-[280px] h-[220px] w-full overflow-hidden items-center justify-center ">
+            <div className="m-auto sm:h-[280px] h-48 overflow-hidden items-center justify-center ">
               <img
                 src={detail.img}
                 alt="sick treatment"
@@ -48,10 +47,10 @@ const Donation = () => {
               />
             </div>
             <div className="flex flex-col sm:gap-3  items-start">
-              <h2 className="text-xl sm:text-4xl font-bold p-3 items-start">
+              <h2 className="text-lg sm:text-4xl font-bold p-3 items-start">
                 {detail.topic}
               </h2>
-              <p className="text-sm sm:text-md p-2 items-start sm:leading-7">
+              <p className="text-sm text-gray-600 sm:text-lg sm:p-2 items-start sm:leading-7">
                 {detail.subTopic}
               </p>
             </div>
@@ -60,12 +59,32 @@ const Donation = () => {
             <div className="justify-end items-end flex pt-5">
               <p className="w-auto p-3 border rounded-full ">0x02d.....no20</p>
             </div>
-            <input
+            {/* <input
               id="file"
               className="p-3 sm:p-5 rounded-lg my-5 w-full border border-gray-700"
               value={selectedValue}
               onChange={(e) => setSelectedValue(e.target.value)}
-            />
+            /> */}
+            <div className="flex justify-between p-2 rounded-lg my-3  border border-gray-700">
+              <input
+                id="file"
+                class="w-full border-none p-2"
+                value={selectedValue}
+                onChange={(e) => setSelectedValue(e.target.value)}
+              />
+              <div className="flex justify-end">
+                <select
+                  id="country"
+                  name="country"
+                  autocomplete="country-name"
+                  class="block py-1 px-6  rounded-2xl border-none bg-gray-300 mx-3  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>USDT</option>
+                  <option>USDC</option>
+                  <option>BNB</option>
+                </select>
+              </div>
+            </div>
             <div className="percentages justify-center items-center gap-5 flex flex-row">
               <button
                 className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
@@ -94,6 +113,7 @@ const Donation = () => {
               class=" p-3 sm:p-5 rounded-lg my-5  border border-gray-700"
               placeholder="(optional)"
             />
+
             <div className="!justify-end !items-end !flex">
               <button className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto">
                 Donate

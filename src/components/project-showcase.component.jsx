@@ -56,6 +56,7 @@ const ProjectShowcase = () => {
   return (
     <div
       ref={sectionRef}
+      id="showcase"
       className="p-0.5 bg-gradient-to-r from-[#FF9606] from-50% to-[#17163E] mt-3"
     >
       {" "}

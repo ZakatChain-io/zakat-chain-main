@@ -175,8 +175,8 @@ const Page = () => {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col gap-x-4 gap-y-3 items-center md:flex-row md:justify-between">
-              <p>Follow Us</p>
+            <div className="flex flex-col gap-x-4 gap-y-3 sm:items-center md:flex-row md:justify-between items-start">
+              <p className="text-sm sm:text-lg">Follow Us</p>
               <div className="flex gap-x-2">
                 <FaceBookIcon />
                 <Link to="https://x.com/ZakatChain?t=Lfsc59OeoRfgfcWaLP1T3A&s=09">
@@ -191,7 +191,7 @@ const Page = () => {
                 <p className="text-sm sm:text-base">
                   Contact Us{" "}
                   <span className="text-[#FF9606] underline">
-                    hello@zakatchain.com
+                    hello@zakatchain.io
                   </span>
                 </p>
               </div>
@@ -199,13 +199,13 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="text-[#344054] flex flex-col mt-10 gap-y-3 sm:flex-row sm:gap-y-0">
-          <div className="flex gap-x-6 font-semibold justify-between">
+        <div className="text-[#344054] flex flex-row justify-between mt-10 gap-y-3 md:flex-row sm:gap-y-0">
+          <div className="flex gap-x-6 font-semibold sm:justify-between flex-col sm:flex-row text-sm sm:text-lg">
             <span>Privacy Policy</span>
             <span>Terms of use</span>
           </div>
           <div className="text-center sm:ml-auto">
-            <p>
+            <p className="">
               © 2024 . Powered by{" "}
               <span className="text-[#17163E] font-semibold">ZakatChain</span>.
               All Rights Reserved.

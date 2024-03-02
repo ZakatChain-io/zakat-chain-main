@@ -19,7 +19,7 @@ const About = () => {
                 technology to facilitate safe, efficient and transparent Zakat &
                 Sadaqah payments and disbursements.
               </p>
-              <p className="text-gray-700 font-semibold leading-7 pt-3">
+              <p className="text-gray-600 font-semibold leading-7 pt-3">
                 We strive to reach out to every possible person in need (the
                 poor, the displaced, the challenged, etc), most especially
                 muslims around the world through donations from crypto users.
@@ -36,7 +36,7 @@ const About = () => {
             <h2 className="text-2xl sm:text-3xl font-semibold">
               ZakatChain is born out of the pristine Islamic spirit.
             </h2>
-            <p className="leading-5 sm:leading-7 font-semibold text-md sm:text-xl">
+            <p className="leading-5 sm:leading-7 font-semibold text-md sm:text-xl text-gray-600">
               Every day, 25,000 people including over 10,000 people die from
               hunger and poverty. That's more 15 deaths per minute, causing more
               casualties than any war or disaster witnessed on earth. As Muslims
@@ -58,12 +58,12 @@ const About = () => {
               <h1 className="text-2xl sm:text-4xl font-bold">
                 How we operate:
               </h1>
-              <p className="mt-6 text-gray-800 justify-start leading-8 text-xl md:text-2xl font-semibold">
+              <p className="mt-6 text-gray-700 justify-start leading-8 text-xl md:text-2xl font-semibold">
                 Through our easy to navigate platform, we get Zakat & Sadaqah
                 through to those who need it regardless of their location and
                 according to their needs.
               </p>
-              <p className="text-gray-700 font-semibold leading-7 pt-3">
+              <p className="text-gray-600 font-semibold leading-7 pt-3">
                 We leverage the different reliable and trusted platforms (e.g
                 Muslim Relief, Kaid Charity, BabusSalaam Orphanage e.t.c) to get
                 to those in need. Our users (donators), can monitor how and what

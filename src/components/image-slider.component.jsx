@@ -30,18 +30,18 @@ const ImageSlider = ({ slides, children }) => {
 
   return (
     <div className="h-full w-full relative">
-      <div
+      {/* <div
         className="absolute top-1/2 left-2 -translate-y-1/2 text-white text-5xl z-10 cursor-pointer"
         onClick={goToPrevSlide}
       >
         ‹
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className="absolute top-1/2 right-2 -translate-y-1/2 text-white text-5xl z-10 cursor-pointer"
         onClick={goToNextSlide}
       >
         ›
-      </div>
+      </div> */}
       <SwitchTransition mode="out-in">
         <CSSTransition key={currentIndex} timeout={500} classNames="">
           <div

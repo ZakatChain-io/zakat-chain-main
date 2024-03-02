@@ -23,10 +23,10 @@ const Footer = () => {
           <MessageIcon />
         </div>
         <div className="mb-16 sm:w-[60%] sm:mx-auto">
-          <h3 className="font-semibold text-2xl text-center">
+          <h3 className="font-semibold text-lg sm:text-2xl text-center">
             Subscribe to our newsletter.
           </h3>
-          <p className="px-7 text-center mt-3">
+          <p className="px-7 text-center mt-3 text-sm sm:text-lg text-gray-700">
             Never miss a beat. Get a weekly dose of Zakat updates, sadaqah
             around the world, tips, trends, and islamic reminder in your inbox.
           </p>
@@ -61,8 +61,8 @@ const Footer = () => {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col gap-x-4 gap-y-3 items-center md:flex-row md:justify-between">
-              <p>Follow Us</p>
+            <div className="flex flex-col gap-x-4 gap-y-3 sm:items-center md:flex-row md:justify-between items-start">
+              <p className="text-sm sm:text-lg">Follow Us</p>
               <div className="flex gap-x-2">
                 <FaceBookIcon />
                 <Link to="https://x.com/ZakatChain?t=Lfsc59OeoRfgfcWaLP1T3A&s=09">
@@ -84,14 +84,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-[#344054] flex flex-col mt-10 gap-y-3 sm:flex-row sm:gap-y-0">
-          <div className="flex gap-x-6 font-semibold justify-between">
+        <div className="text-[#344054] flex flex-row justify-between mt-10 gap-y-3 md:flex-row sm:gap-y-0">
+          <div className="flex gap-x-6 font-semibold sm:justify-between flex-col sm:flex-row text-sm sm:text-lg">
             <span>Privacy Policy</span>
             <span>Terms of use</span>
           </div>
           <div className="text-center sm:ml-auto">
-            <p>
+            <p className="">
               © 2024 . Powered by{" "}
               <span className="text-[#17163E] font-semibold">ZakatChain</span>.
               All Rights Reserved.
