@@ -22,7 +22,10 @@ const ZakatDropdown = () => {
         <div className="text-white text-4xl self-center">زكاة</div>
 
         <div className="self-center">
-          <Link to="/pay" className="bg-white rounded-full py-2 px-2 sm:px-6">
+          <Link
+            to="/pay-zakat"
+            className="bg-white rounded-full py-2 px-2 sm:px-6"
+          >
             Pay Now
           </Link>
         </div>

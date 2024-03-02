@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as MessageIcon } from "../assets/message-icon.svg";
 import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import ChatBoxComponent from "./chat-box-component";
@@ -64,8 +65,12 @@ const Footer = () => {
               <p>Follow Us</p>
               <div className="flex gap-x-2">
                 <FaceBookIcon />
-                <TwitterIcon />
-                <InstagramIcon />
+                <Link to="https://x.com/ZakatChain?t=Lfsc59OeoRfgfcWaLP1T3A&s=09">
+                  <TwitterIcon />
+                </Link>
+                <Link to="https://www.instagram.com/zakatchain?igsh=a3pkcTBnbzN3Zjdm">
+                  <InstagramIcon />
+                </Link>
                 <LinkedInIcon />
               </div>
               <div className="md:hidden">

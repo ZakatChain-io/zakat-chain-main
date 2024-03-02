@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { ReactComponent as ZakatPayersIcon } from "../assets/zakat-payers-grp-icon.svg";
 import { ReactComponent as SadaqahPayersIcon } from "../assets/zakat-payers-grp-icon.svg";
 import { ReactComponent as BeneficiariesIcon } from "../assets/beneficiaries-group-icon.svg";
@@ -10,27 +8,57 @@ const ProjectShowcase = () => {
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
 
+  const sectionRef = useRef(null);
+
+  const startCounting = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          const interval1 = setInterval(() => {
+            setCount1((prevCount) => (prevCount < 35 ? prevCount + 1 : 35));
+          }, 50);
+
+          setTimeout(() => {
+            const interval2 = setInterval(() => {
+              setCount2((prevCount) => (prevCount < 2 ? prevCount + 1 : 2));
+            }, 500);
+
+            setTimeout(() => {
+              const interval3 = setInterval(() => {
+                setCount3((prevCount) =>
+                  prevCount < 100 ? prevCount + 1 : 100
+                );
+              }, 10);
+
+              return () => {
+                clearInterval(interval3);
+              };
+            }, 500); // Delay for the third counter
+          }, 500); // Delay for the second counter
+
+          return () => {
+            clearInterval(interval1);
+          };
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+  };
+
   useEffect(() => {
-    const interval1 = setInterval(() => {
-      setCount1((prevCount) => (prevCount < 35 ? prevCount + 1 : 35));
-    }, 50);
-
-    const interval2 = setInterval(() => {
-      setCount2((prevCount) => (prevCount < 2 ? prevCount + 1 : 2));
-    }, 500);
-
-    const interval3 = setInterval(() => {
-      setCount3((prevCount) => (prevCount < 100 ? prevCount + 1 : 100));
-    }, 10);
-
-    return () => {
-      clearInterval(interval1);
-      clearInterval(interval2);
-      clearInterval(interval3);
-    };
+    startCounting();
   }, []);
+
   return (
-    <div className="p-0.5 bg-gradient-to-r from-[#FF9606] from-50% to-[#17163E] mt-3">
+    <div
+      ref={sectionRef}
+      className="p-0.5 bg-gradient-to-r from-[#FF9606] from-50% to-[#17163E] mt-3"
+    >
+      {" "}
       <div className="bg-white bg-contain bg-no-repeat flex flex-col gap-y-7 pt-3 pb-14 px-16">
         <div className="text-center">
           <h3 className="font-semibold text-2xl">Project Showcase</h3>

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./routes/Home/Home";
-import Page from "./routes/pay/page";
+import Page from "./routes/pay-zakat/page";
 import Donate from "./routes/donate/page";
 import About from "./routes/about/page";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
@@ -15,7 +15,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pay" element={<Page />} />
+          <Route path="/pay-zakat" element={<Page />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/about" element={<About />} />
         </Routes>

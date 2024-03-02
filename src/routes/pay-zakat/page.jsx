@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../components/footer-component";
+import { Link } from "react-router-dom";
 import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
@@ -179,8 +179,12 @@ const Page = () => {
               <p>Follow Us</p>
               <div className="flex gap-x-2">
                 <FaceBookIcon />
-                <TwitterIcon />
-                <InstagramIcon />
+                <Link to="https://x.com/ZakatChain?t=Lfsc59OeoRfgfcWaLP1T3A&s=09">
+                  <TwitterIcon />
+                </Link>
+                <Link to="https://www.instagram.com/zakatchain?igsh=a3pkcTBnbzN3Zjdm">
+                  <InstagramIcon />
+                </Link>
                 <LinkedInIcon />
               </div>
               <div className="md:hidden">

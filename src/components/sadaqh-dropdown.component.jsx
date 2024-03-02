@@ -28,7 +28,10 @@ const SadaqhDropdown = () => {
         </div>
 
         <div className="self-center">
-          <Link to="/pay" className="bg-white rounded-full py-2 px-2 sm:px-6">
+          <Link
+            to="/donate"
+            className="bg-white rounded-full py-2 px-2 sm:px-6"
+          >
             Pay Now
           </Link>
         </div>
