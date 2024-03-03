@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Logo */}
       <div>
         <Link to="/">
-          <Logo />
+          <Logo className="h-16" />
         </Link>
       </div>
       {/* Links */}

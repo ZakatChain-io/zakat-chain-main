@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           <div className="self-center ml-auto flex gap-x-14">
-            <div className="hidden md:block">
+            <div className="hidden md:block text-xs sm:text-lg">
               <p>
                 Contact Us{" "}
                 <span className="text-[#FF9606] underline">
@@ -61,7 +61,7 @@ const Footer = () => {
                 </span>
               </p>
             </div>
-            <div className="flex flex-col gap-x-4 gap-y-3 sm:items-center md:flex-row md:justify-between items-start">
+            <div className="flex flex-col text-xs sm:text-lg gap-x-4 gap-y-3 sm:items-center md:flex-row md:justify-between items-start">
               <p className="text-sm sm:text-lg">Follow Us</p>
               <div className="flex gap-x-2">
                 <FaceBookIcon />
@@ -84,10 +84,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="text-[#344054] flex flex-row justify-between mt-10 gap-y-3 md:flex-row sm:gap-y-0">
-          <div className="flex gap-x-6 font-semibold sm:justify-between flex-col sm:flex-row text-sm sm:text-lg">
+        <div className="text-[#344054] text-xs sm:text-lg flex flex-row justify-between mt-10 gap-y-3 md:flex-row sm:gap-y-0">
+          <div className="flex gap-x-6 font-semibold sm:justify-between flex-col sm:flex-row text-xs sm:text-lg">
             <span>Privacy Policy</span>
-            <span>Terms of use</span>
+            <span className="flex justify-end">Terms of use</span>
           </div>
           <div className="text-center sm:ml-auto">
             <p className="">
