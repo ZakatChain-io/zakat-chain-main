@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
-
+import { useState, useEffect } from "react";
+import { paybnb } from "../../contract con";
 const Page = () => {
+  const [contract, setContract] = useState(null);
+  const [amount, setAmount] = useState(" ");
+  const [token , setToken] = useState(" ")
   const FaceBookIcon = () => {
     return (
       <svg
@@ -126,6 +130,10 @@ const Page = () => {
         <div className="w-[auto] justify-center sec_div mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container px-10 mb-14 mt-10">
           <div className=" text-sm flex flex-col sub">
             <label className="text-gray-700 ">
+              <input type="number"
+              id="amount"
+              value={ amount } 
+              onChange={(e) => setAmount(e.target.value)}/>
               Zakat Amount <span>(2.5% of total asset)</span>{" "}
             </label>
 
@@ -152,7 +160,7 @@ const Page = () => {
               placeholder="(optional)"
             />
 
-            <button className="p-5 bg-[#17163E] w-full border rounded-lg text-white">
+            <button className="p-5 bg-[#17163E] w-full border rounded-lg text-white" onClick={paybnb}>
               Pay Zakat
             </button>
           </div>
@@ -216,5 +224,7 @@ const Page = () => {
     </div>
   );
 };
+
+
 
 export default Page;
