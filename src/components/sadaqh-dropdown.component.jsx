@@ -83,10 +83,10 @@ const SadaqhDropdown = () => {
                   </Link>
                 </div>
                 <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-8 md:ml-32 ">
-                  <h1 className="text-2xl sm:text-3xl font-bold text-white">
+                  <h1 className="text-xl sm:text-2xl font-bold text-white">
                     {detail.topic}
                   </h1>
-                  <p className="text-gray-200 w-full text-sm sm:text-lg">
+                  <p className="text-gray-200 w-full text-xs leading-3 sm:leading-5 sm:text-lg">
                     {detail.subTopic}
                   </p>
                   <Link
