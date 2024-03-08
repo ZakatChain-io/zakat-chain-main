@@ -1,14 +1,10 @@
 import React from "react";
+import Navbar from "../../components/navbar.component";
 import { Link } from "react-router-dom";
-import circle from "../../assets/black_n_white.jpeg";
-// import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
+// import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
-import { useState, useEffect } from "react";
-import { paybnb } from "../../contract con";
-const Page = () => {
-  const [contract, setContract] = useState(null);
-  const [amount, setAmount] = useState(" ");
-  const [token, setToken] = useState(" ");
+
+const page = () => {
   const FaceBookIcon = () => {
     return (
       <svg
@@ -101,77 +97,77 @@ const Page = () => {
     );
   };
   return (
-    <div>
-      <div className=" mb-[400px]">
-        <div className="cont">
-          <span
-            style={{
-              borderRadius: "50%",
-              border: "4px solid white",
-              zIndex: "99",
-              position: "absolute",
-              top: "100%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              display: "inline-block",
-              width: "230px", // Increase the width
-              height: "230px", // Increase the height
-            }}
-          >
-            <img
-              src={circle}
-              alt="user icon"
-              className="w-full h-full object-cover rounded-full"
-            />
-          </span>
+    <div className="mx-[3%]">
+      <Navbar />
+      <div className="mt-[40px] justify-center items-center">
+        <p className="text-center items-center justify-center my-5">
+          Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
+          eiudsmod tempor inc.
+        </p>
 
-          <p>0xbaFC....9573</p>
+        <div>
+          <div className="flex items-center justify-center ">
+            <table className=" shadow-md rounded-md calc-table w-[700px] justify-between mx-[20px]">
+              <thead className="">
+                <tr>
+                  <th className="py-2 px-4 text-left">
+                    Total Portfolio Holdings
+                  </th>
+                  <th className="py-2 px-4 text-right ">Value ($)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-2 px-4">
+                    Centralized exchange <br />{" "}
+                    <span className="text-[12px]">(Binance, Bybit, etc.)</span>
+                  </td>
+                  <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
+                    <div>700</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4">Mobile Wallets</td>
+                  <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
+                    5000
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4">Others</td>
+                  <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
+                    10000
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4">Total</td>
+                  <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
+                    22000
+                  </td>
+                </tr>
+                <tr className="last-tr">
+                  <td className="py-2 px-4">Zakat Due</td>
+                  <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center last-value">
+                    500
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="w-[auto] justify-center sec_div mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container px-10 mb-14 mt-10">
-          <div className=" text-sm flex flex-col sub">
-            <label className="text-gray-700 ">
-              <input
-                type="number"
-                id="amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-              />
-              Zakat Amount <span>(2.5% of total asset)</span>{" "}
-            </label>
-
-            <div className="flex justify-between p-2 rounded-lg my-5  border">
-              <input id="file" class="w-full border-none p-5" />
-              <div className="flex justify-end">
-                <select
-                  id="country"
-                  name="country"
-                  autocomplete="country-name"
-                  class="block py-3 px-6  rounded-xl border-none bg-blue-200 mx-3  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                >
-                  <option>USDT</option>
-                  <option>USDC</option>
-                  <option>BNB</option>
-                </select>
-              </div>
-            </div>
-
-            <label className="text-gray-700 ">Message </label>
-            <input
-              id="file"
-              class=" p-5 rounded-lg my-5  border"
-              placeholder="(optional)"
-            />
-
-            <button
-              className="p-5 bg-[#17163E] w-full border rounded-lg text-white"
-              onClick={paybnb}
-            >
-              Pay Zakat
+        <div className="my-[50px] flex justify-center items-center flex-col">
+          <p className="font-bold justify-center align-center text-sm sm:text-lg">
+            Zakat chain currently operates on the BSC Chain Only, kindly convert
+            your Zakat Due to BNB, USDC or USDT to pay
+          </p>
+          <div className="flex justify-end">
+            <button className="border rounded-lg bg-[#ff9606] p-3 text-white ">
+              Proceed
             </button>
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+
+      {/* footer  */}
 
       <div className="bg-[#F7F9FC] pt-5 pb-10 px-7">
         <div className="flex gap-x-10">
@@ -229,4 +225,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

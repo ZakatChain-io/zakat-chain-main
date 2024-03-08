@@ -23,10 +23,10 @@ const ZakatDropdown = () => {
 
         <div className="self-center">
           <Link
-            to="/pay-zakat"
+            to="/calculate-zakat"
             className="bg-white rounded-full py-2 px-2 sm:px-6"
           >
-            Pay Now
+            Calculate
           </Link>
         </div>
       </div>
@@ -34,14 +34,14 @@ const ZakatDropdown = () => {
       <div className="flex flex-col">
         {isDropped && (
           <div className="text-white w-2/3 mx-auto flex flex-col gap-y-7">
-            <p className="text-center">
+            <p className="text-center text-sm sm:text-lg">
               Are you Zakat Eligible? Your Zakat can make a BIG difference.
               Zakat is an annual charitable payment that goes on to benefit
               those in need and is a Religious obligation for Muslims
               everywhere.
             </p>
 
-            <p className="text-center">
+            <p className="text-center text-sm sm:text-lg">
               Your Zakat is an important  pillar of Islam that allows you to
               care for orphans and the elderly, provide food and water, deliver
               healthcare and education, or even provide emergency aid to those

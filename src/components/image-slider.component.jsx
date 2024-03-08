@@ -51,9 +51,13 @@ const ImageSlider = ({ slides, children }) => {
             <div className="bg-black bg-opacity-55 h-full">
               <div className="py-28 text-center w-[80%] mx-auto md:mx-0 md:text-left md:pl-20 md:w-[50%]">
                 <div className="text-white text-4xl font-bold">
-                  <h1>{slides[currentIndex].text}</h1>
+                  <h1 className="sm:text-3xl text-2xl">
+                    {slides[currentIndex].text}
+                  </h1>
                 </div>
-                <p className="text-white">{slides[currentIndex].subText}</p>
+                <p className="text-white text-sm sm:text-lg my-5">
+                  {slides[currentIndex].subText}
+                </p>
               </div>
             </div>
           </div>
