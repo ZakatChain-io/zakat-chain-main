@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
-import { useConnectedAddress } from "@thirdweb-dev/react";
+import { useAddress } from "@thirdweb-dev/react";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/router";
 import { paybnb, payusdt, payusdc } from "../../contract con";
@@ -12,8 +12,14 @@ import { toast } from "react-toastify";
 const Page = () => {
   const [amount, setAmount] = useState("");
   const [token, setToken] = useState("USDT");
+  const address = useAddress();
   // const router = useRouter();
   // const connectedAddress = router.query.address;
+
+  let cutAddress = "";
+  if (address) {
+    cutAddress = address.slice(0, 6) + "..." + address.slice(-4);
+  }
 
   const handlePay = async () => {
     const numericAmount = parseFloat(amount);
@@ -64,6 +70,7 @@ const Page = () => {
       </svg>
     );
   };
+  
 
   const TwitterIcon = () => {
     return (
@@ -160,7 +167,7 @@ const Page = () => {
             />
           </span>
 
-          <p>connectedAddress</p>
+          <p> {cutAddress} </p>
         </div>
         <div className="w-[auto] justify-center sec_div mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container px-10 mb-14 mt-10">
           <div className=" text-sm flex flex-col sub">

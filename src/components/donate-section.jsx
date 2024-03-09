@@ -6,10 +6,17 @@ import support from "../../src/assets/support-an-orphan-through-school.png";
 import crying from "../../src/assets/crying.jpeg";
 import { toast } from "react-toastify";
 import { payusdc, payusdt, paybnb } from "../contract con";
+import { useAddress } from "@thirdweb-dev/react";
 
 const Donation = () => {
   const [token, setToken] = useState("USDT");
   const [amount, setAmount] = useState("");
+  const { address } = useAddress();
+
+  let cutAddress = "";
+  if (address) {
+    cutAddress = address.slice(0, 6) + "..." + address.slice(-4);
+  }
 
   const handlePay = async () => {
     const numericAmount = parseFloat(amount);
@@ -87,7 +94,7 @@ const Donation = () => {
           </div>
           <div className="flex flex-col">
             <div className="justify-end items-end flex pt-5">
-              <p className="w-auto p-3 border rounded-full ">0x02d.....no20</p>
+              <p className="w-auto p-3 border rounded-full "> { cutAddress } </p>
             </div>
             {/* <input
               id="file"
@@ -102,6 +109,7 @@ const Donation = () => {
               <input
                 id="file"
                 className="w-full border-none p-2"
+                value={ amount }
                 onChange={(e) => setAmount(e.target.value)}
               />
               <div className="flex justify-end">
@@ -121,13 +129,17 @@ const Donation = () => {
             </div>
             {/* Buttons */}
             <div className="percentages justify-center items-center gap-5 flex flex-row">
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
+              onClick={() => setAmount("25")}>
                 25 USDT
               </button>
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
+              onClick={() => setAmount("50")}>
                 50 USDT
               </button>
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block">
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block"
+              onClick={() => setAmount("100")}
+              >
                 100 USDT
               </button>
             </div>
