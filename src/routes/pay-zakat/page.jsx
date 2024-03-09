@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 // import { useRouter } from "next/router";
 import { paybnb, payusdt, payusdc } from "../../contract con";
 import { toast } from "react-toastify";
+import Navbar from "../../components/navbar.component";
 
 const Page = () => {
   const [amount, setAmount] = useState("");
@@ -144,6 +145,7 @@ const Page = () => {
   };
   return (
     <div>
+      <Navbar></Navbar>
       <div className=" mb-[400px]">
         <div className="cont">
           <span

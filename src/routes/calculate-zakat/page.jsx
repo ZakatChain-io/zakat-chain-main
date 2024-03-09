@@ -3,8 +3,23 @@ import Navbar from "../../components/navbar.component";
 import { Link } from "react-router-dom";
 // import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
+import { useState } from "react";
 
-const page = () => {
+const Page = () => {
+
+  const [exchangeValue, setExchangeValue] = useState(0);
+  const [walletsValue, setWalletsValue] = useState(0);
+  const [othersValue, setOthersValue] = useState(0);
+
+
+  const calculateTotal = () => {
+    return parseFloat(exchangeValue) + parseFloat(walletsValue) + parseFloat(othersValue);
+  };
+
+  const zakatDue = () => {
+    return 0.025 * calculateTotal();
+  };
+
   const FaceBookIcon = () => {
     return (
       <svg
@@ -130,31 +145,31 @@ const page = () => {
                     <span className="text-[12px]">(Binance, Bybit, etc.)</span>
                   </td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    <input id="file" class=" overflow-hidden" placeholder="" />
+                    <input id="file" class=" overflow-hidden" placeholder="" value={exchangeValue} onChange={(e) => setExchangeValue(e.target.value)} />
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Mobile Wallets</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    <input id="file" class=" overflow-hidden" placeholder="" />
+                    <input id="file" class=" overflow-hidden" placeholder="" value={ walletsValue } onChange={(e) => setWalletsValue(e.target.value)}/>
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Others</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    <input id="file" class=" overflow-hidden" placeholder="" />
+                    <input id="file" class=" overflow-hidden" placeholder="" value={ othersValue } onChange={(e) => setOthersValue(e.target.value)}/>
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Total</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    <input id="file" class=" overflow-hidden" placeholder="" />
+                    <input id="file" class=" overflow-hidden" placeholder="" value={ calculateTotal()} readOnly/>
                   </td>
                 </tr>
                 <tr className="last-tr">
                   <td className="py-2 px-4">Zakat Due</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center last-value">
-                    <input id="file" class=" overflow-hidden" placeholder="" />
+                    <input id="file" class=" overflow-hidden" placeholder="" value={ zakatDue() }/>
                   </td>
                 </tr>
               </tbody>
@@ -235,4 +250,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
