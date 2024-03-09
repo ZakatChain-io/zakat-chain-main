@@ -4,11 +4,45 @@ import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { useState, useEffect } from "react";
-import { paybnb } from "../../contract con";
+import { paybnb, payusdt, payusdc} from "../../contract con";
+import { toast } from "react-toastify";
+
 const Page = () => {
-  const [contract, setContract] = useState(null);
-  const [amount, setAmount] = useState(" ");
-  const [token, setToken] = useState(" ");
+  const [amount, setAmount] = useState("");
+  const [token, setToken] = useState("USDT");
+
+  const handlePay = async () => {
+
+    const numericAmount = parseFloat(amount);
+
+    if(isNaN(numericAmount) || numericAmount <= 0) {
+      toast.error("Please enter a valid number");
+      return;
+    }
+
+    try {
+      switch (token) {
+        case "USDT":
+          await payusdt(numericAmount);
+          break;
+        case "USDC":
+          await payusdc(numericAmount);
+          break;
+        case "BNB":
+          await paybnb(numericAmount);
+          break;
+        default:
+          toast.error("Invalid token selection");
+          break;
+
+          
+      } 
+      console.log("Payment Sucessful");
+    } catch (error) {
+        console.error("Payment Unsuccessful");
+      }
+  }
+  
   const FaceBookIcon = () => {
     return (
       <svg
@@ -131,26 +165,32 @@ const Page = () => {
           <div className=" text-sm flex flex-col sub">
             <label className="text-gray-700 ">
               <input
-                type="number"
+                type="text"
                 id="amount"
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                onChange={e=>console.log(e)}
+                placeholder="Zakat Amount"
               />
-              Zakat Amount <span>(2.5% of total asset)</span>{" "}
+               <span>(2.5% of total asset)</span>{" "}
             </label>
 
             <div className="flex justify-between p-2 rounded-lg my-5  border">
-              <input id="file" class="w-full border-none p-5" />
+              <input 
+                id="file" 
+                class="w-full border-none p-5" 
+                onChange={(e=>setAmount(e.target.value))}
+              />
               <div className="flex justify-end">
                 <select
                   id="country"
                   name="country"
                   autocomplete="country-name"
+                  value={token} onChange={(e) => setToken(e.target.value)}
                   class="block py-3 px-6  rounded-xl border-none bg-blue-200 mx-3  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
-                  <option>USDT</option>
-                  <option>USDC</option>
-                  <option>BNB</option>
+                  <option value="USDT">USDT</option>
+                  <option value="USDC">USDC</option>
+                  <option value="BNB">BNB</option>
                 </select>
               </div>
             </div>
@@ -164,7 +204,7 @@ const Page = () => {
 
             <button
               className="p-5 bg-[#17163E] w-full border rounded-lg text-white"
-              onClick={paybnb}
+              onClick={handlePay}
             >
               Pay Zakat
             </button>
