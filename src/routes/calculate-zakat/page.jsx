@@ -100,9 +100,12 @@ const page = () => {
     <div className="mx-[3%]">
       <Navbar />
       <div className="mt-[40px] justify-center items-center">
-        <p className="text-center items-center justify-center my-5">
-          Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
-          eiudsmod tempor inc.
+        <p className="text-center items-center justify-center my-5 sm:mx-5 mx-2 sm:pb-12 pb-8">
+          Zakat is a mandatory charity in Islam, one of the Five Pillars. It
+          requires Muslims to donate 2.5% of their wealth above a certain
+          threshold (nisab) annually. This charitable act serves to purify
+          wealth, provide assistance to the less fortunate, and foster communal
+          well-being.
         </p>
 
         <div>
@@ -112,6 +115,10 @@ const page = () => {
                 <tr>
                   <th className="py-2 px-4 text-left">
                     Total Portfolio Holdings
+                    <br />
+                    <p className="text-[10px]">
+                      Enter your holdings values in USD
+                    </p>
                   </th>
                   <th className="py-2 px-4 text-right ">Value ($)</th>
                 </tr>
@@ -123,31 +130,31 @@ const page = () => {
                     <span className="text-[12px]">(Binance, Bybit, etc.)</span>
                   </td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    <div>700</div>
+                    <input id="file" class=" overflow-hidden" placeholder="" />
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Mobile Wallets</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    5000
+                    <input id="file" class=" overflow-hidden" placeholder="" />
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Others</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    10000
+                    <input id="file" class=" overflow-hidden" placeholder="" />
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4">Total</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center value">
-                    22000
+                    <input id="file" class=" overflow-hidden" placeholder="" />
                   </td>
                 </tr>
                 <tr className="last-tr">
                   <td className="py-2 px-4">Zakat Due</td>
                   <td className="py-2 px-4 text-right border-[2px] flex justify-center items-center last-value">
-                    500
+                    <input id="file" class=" overflow-hidden" placeholder="" />
                   </td>
                 </tr>
               </tbody>
@@ -160,10 +167,11 @@ const page = () => {
             your Zakat Due to BNB, USDC or USDT to pay
           </p>
           <div className="flex justify-end">
-            <Link 
-            to="/pay-zakat"
-            className="border rounded-lg bg-[#ff9606] p-3 text-white ">
-              Proceed
+            <Link
+              to="/pay-zakat"
+              className="border rounded-lg bg-[#ff9606] p-3 text-white "
+            >
+              Connect Wallet to proceed
             </Link>
           </div>
         </div>

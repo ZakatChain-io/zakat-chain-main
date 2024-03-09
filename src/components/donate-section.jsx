@@ -3,6 +3,7 @@ import { useState } from "react";
 import sick from "../../src/assets/help-treat-a-sick-muslim.png";
 import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
 import support from "../../src/assets/support-an-orphan-through-school.png";
+import crying from "../../src/assets/crying.jpeg";
 import { toast } from "react-toastify";
 import { payusdc, payusdt, paybnb } from "../contract con";
 
@@ -11,10 +12,9 @@ const Donation = () => {
   const [amount, setAmount] = useState("");
 
   const handlePay = async () => {
-
     const numericAmount = parseFloat(amount);
 
-    if(isNaN(numericAmount) || numericAmount <= 0) {
+    if (isNaN(numericAmount) || numericAmount <= 0) {
       toast.error("Please enter a valid number");
       return;
     }
@@ -33,20 +33,18 @@ const Donation = () => {
         default:
           toast.error("Invalid token selection");
           break;
-
-          
-      } 
+      }
       console.log("Payment Sucessful");
     } catch (error) {
-        console.error("Payment Unsuccessful");
-      }
-  }
+      console.error("Payment Unsuccessful");
+    }
+  };
 
   const details = [
     {
       topic: "Donate to the poor",
       subTopic: `"He who feeds an hungry person would be fed by Allah on the Day of Resurrection" (Al Tirmidhi)`,
-      img: sick,
+      img: crying,
     },
     {
       topic: "Support an orphan through school",
@@ -104,7 +102,7 @@ const Donation = () => {
               <input
                 id="file"
                 className="w-full border-none p-2"
-                onChange={(e=>setAmount(e.target.value))}
+                onChange={(e) => setAmount(e.target.value)}
               />
               <div className="flex justify-end">
                 <select
@@ -112,7 +110,7 @@ const Donation = () => {
                   name={`country`}
                   autoComplete="country-name"
                   className="block py-1 px-6 rounded-2xl border-none bg-gray-300 mx-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                  value={token} 
+                  value={token}
                   onChange={(e) => setToken(e.target.value)}
                 >
                   <option value="USDT">USDT</option>
@@ -123,19 +121,13 @@ const Donation = () => {
             </div>
             {/* Buttons */}
             <div className="percentages justify-center items-center gap-5 flex flex-row">
-              <button
-                className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-              >
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
                 25 USDT
               </button>
-              <button
-                className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-              >
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
                 50 USDT
               </button>
-              <button
-                className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block"
-              >
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block">
                 100 USDT
               </button>
             </div>
@@ -149,8 +141,10 @@ const Donation = () => {
             />
 
             <div className="!justify-end !items-end !flex">
-              <button className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto"
-              onClick={handlePay}>
+              <button
+                className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto"
+                onClick={handlePay}
+              >
                 Donate
               </button>
             </div>
