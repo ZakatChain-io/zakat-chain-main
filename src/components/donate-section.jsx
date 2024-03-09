@@ -3,15 +3,44 @@ import { useState } from "react";
 import sick from "../../src/assets/help-treat-a-sick-muslim.png";
 import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
 import support from "../../src/assets/support-an-orphan-through-school.png";
+import { toast } from "react-toastify";
+import { payusdc, payusdt, paybnb } from "../contract con";
 
 const Donation = () => {
-  const [selectedValues, setSelectedValues] = useState(["", ""]);
+  const [token, setToken] = useState("USDT");
+  const [amount, setAmount] = useState("");
 
-  const handleButtonClick = (value, index) => {
-    const newValues = [...selectedValues];
-    newValues[index] = value.replace(/\D/g, ""); // Extract only numbers
-    setSelectedValues(newValues);
-  };
+  const handlePay = async () => {
+
+    const numericAmount = parseFloat(amount);
+
+    if(isNaN(numericAmount) || numericAmount <= 0) {
+      toast.error("Please enter a valid number");
+      return;
+    }
+
+    try {
+      switch (token) {
+        case "USDT":
+          await payusdt(numericAmount);
+          break;
+        case "USDC":
+          await payusdc(numericAmount);
+          break;
+        case "BNB":
+          await paybnb(numericAmount);
+          break;
+        default:
+          toast.error("Invalid token selection");
+          break;
+
+          
+      } 
+      console.log("Payment Sucessful");
+    } catch (error) {
+        console.error("Payment Unsuccessful");
+      }
+  }
 
   const details = [
     {
@@ -73,25 +102,22 @@ const Donation = () => {
               className="flex justify-between p-[6px] sm:p-2 rounded-lg my-1 sm:my-3 border border-gray-700"
             >
               <input
-                id={`file-${index}`}
+                id="file"
                 className="w-full border-none p-2"
-                value={selectedValues[index]}
-                onChange={(e) => {
-                  const newValues = [...selectedValues];
-                  newValues[index] = e.target.value;
-                  setSelectedValues(newValues);
-                }}
+                onChange={(e=>setAmount(e.target.value))}
               />
               <div className="flex justify-end">
                 <select
-                  id={`country-${index}`}
-                  name={`country-${index}`}
+                  id={`country`}
+                  name={`country`}
                   autoComplete="country-name"
                   className="block py-1 px-6 rounded-2xl border-none bg-gray-300 mx-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  value={token} 
+                  onChange={(e) => setToken(e.target.value)}
                 >
-                  <option>USDT</option>
-                  <option>USDC</option>
-                  <option>BNB</option>
+                  <option value="USDT">USDT</option>
+                  <option value="USDC">USDC</option>
+                  <option value="BNB">BNB</option>
                 </select>
               </div>
             </div>
@@ -99,19 +125,16 @@ const Donation = () => {
             <div className="percentages justify-center items-center gap-5 flex flex-row">
               <button
                 className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-                onClick={() => handleButtonClick("25 USDT", index)}
               >
                 25 USDT
               </button>
               <button
                 className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-                onClick={() => handleButtonClick("50 USDT", index)}
               >
                 50 USDT
               </button>
               <button
                 className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block"
-                onClick={() => handleButtonClick("100 USDT", index)}
               >
                 100 USDT
               </button>
@@ -126,7 +149,8 @@ const Donation = () => {
             />
 
             <div className="!justify-end !items-end !flex">
-              <button className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto">
+              <button className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto"
+              onClick={handlePay}>
                 Donate
               </button>
             </div>

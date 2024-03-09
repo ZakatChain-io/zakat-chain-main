@@ -160,9 +160,11 @@ const page = () => {
             your Zakat Due to BNB, USDC or USDT to pay
           </p>
           <div className="flex justify-end">
-            <button className="border rounded-lg bg-[#ff9606] p-3 text-white ">
+            <Link 
+            to="/pay-zakat"
+            className="border rounded-lg bg-[#ff9606] p-3 text-white ">
               Proceed
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@ import { ToastContainer} from "react-toastify";
 
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <div className="App">
