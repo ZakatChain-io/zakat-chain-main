@@ -11,7 +11,7 @@ import { useAddress } from "@thirdweb-dev/react";
 const Donation = () => {
   const [token, setToken] = useState("USDT");
   const [amount, setAmount] = useState("");
-  const { address } = useAddress();
+  const  address  = useAddress();
 
   let cutAddress = "";
   if (address) {

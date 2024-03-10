@@ -4,11 +4,13 @@ import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { useAddress } from "@thirdweb-dev/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { useRouter } from "next/router";
 import { paybnb, payusdt, payusdc } from "../../contract con";
 import { toast } from "react-toastify";
 import Navbar from "../../components/navbar.component";
+
+
 
 const Page = () => {
   const [amount, setAmount] = useState("");
