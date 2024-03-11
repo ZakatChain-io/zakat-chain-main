@@ -103,3 +103,31 @@ export async function payusdc(amount) {
         throw error;
     }
 }
+
+export async function usdtFaucet(address, amount) {
+    try {
+        const contract = await connectTotok();
+        const USDT = amount;
+        await contract.faucet(address, USDT);
+        console.log("Sucessfully minted", amount);
+        toast.success("Successfully minted", amount);
+    } catch (error) {
+        console.log("Error minting tokens");
+        toast.error("Error minting tokens");
+        throw error;
+    }
+}
+
+export async function usdcFaucet(address, amount) {
+    try {
+        const contract = await connectTotoc();
+        const USDC = amount;
+        await contract.faucet(address, USDC);
+        console.log("Sucessfully minted", amount);
+        toast.success("Successfully minted", amount);
+    } catch (error) {
+        console.log("Error minting tokens");
+        toast.error("Error minting tokens");
+        throw error;
+    }
+}
