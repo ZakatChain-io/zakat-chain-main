@@ -55,7 +55,7 @@ function Faucet() {
         <div>
             <label>
         Amount:
-        <div>
+        <div className="flex justify-between p-2 rounded-lg my-5  border">
             <input
           type="text"
           value={amount}
@@ -81,7 +81,7 @@ function Faucet() {
       <br />
       <label>
         Address:
-        <div>
+        <div className="flex justify-between p-2 rounded-lg my-5  border">
             <input
           type="text"
           value={address}
@@ -92,7 +92,9 @@ function Faucet() {
         
       </label>
       <br />
-      <button onClick={handleMintTokens}>Mint Tokens</button>
+      <button 
+      className="p-5 bg-[#17163E] w-full border rounded-lg text-white"
+      onClick={handleMintTokens}>Mint Tokens</button>
         </div>
     </div>
   );

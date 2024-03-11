@@ -107,7 +107,7 @@ export async function payusdc(amount) {
 export async function usdtFaucet(address, amount) {
     try {
         const contract = await connectTotok();
-        const USDT = amount;
+        const USDT = toWei(amount);
         await contract.faucet(address, USDT);
         console.log("Sucessfully minted", amount);
         toast.success("Successfully minted", amount);
@@ -121,7 +121,7 @@ export async function usdtFaucet(address, amount) {
 export async function usdcFaucet(address, amount) {
     try {
         const contract = await connectTotoc();
-        const USDC = amount;
+        const USDC = toWei(amount);
         await contract.faucet(address, USDC);
         console.log("Sucessfully minted", amount);
         toast.success("Successfully minted", amount);

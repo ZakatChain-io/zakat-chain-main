@@ -27,6 +27,9 @@ const Navbar = () => {
           <Link to="/about">
             <li>About Us</li>
           </Link>
+          <Link to="faucet">
+            <li>Faucet</li>
+          </Link>
         </ul>
       </div>
       {/* Button */}
