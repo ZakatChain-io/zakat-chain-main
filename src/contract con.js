@@ -59,7 +59,7 @@ export async function paybnb(amount) {
         console.log(amount);
         const contract = await connectTocon();
         const bnbAmount = toWei(amount);
-        await contract.payBNB(bnbAmount, { value: bnbAmount }, { gasLimit: 300000 });
+        await contract.payBNB(bnbAmount, { value: bnbAmount, gasLimit: 300000});
         console.log('Payment Successful');
         toast.success("Payment Sucessful")
         
