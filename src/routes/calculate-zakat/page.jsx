@@ -5,6 +5,18 @@ import { Link } from "react-router-dom";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { useState } from "react";
 
+
+/*  GOES LIVE ON FRIDAY
+  Zakat is a mandatory charity in Islam, one of the Five Pillars. It
+          requires Muslims to donate 2.5% of their wealth above a certain
+          threshold (nisab) annually. This charitable act serves to purify
+          wealth, provide assistance to the less fortunate, and foster communal
+          well-being.
+
+          -- CHANGE ETH TO BNB
+
+          -- REMOVE FAUCET
+ */
 const Page = () => {
 
   const [exchangeValue, setExchangeValue] = useState(0);
@@ -116,11 +128,7 @@ const Page = () => {
       <Navbar />
       <div className="mt-[40px] justify-center items-center">
         <p className="text-center items-center justify-center my-5 sm:mx-5 mx-2 sm:pb-12 pb-8">
-          Zakat is a mandatory charity in Islam, one of the Five Pillars. It
-          requires Muslims to donate 2.5% of their wealth above a certain
-          threshold (nisab) annually. This charitable act serves to purify
-          wealth, provide assistance to the less fortunate, and foster communal
-          well-being.
+          
         </p>
 
         <div>

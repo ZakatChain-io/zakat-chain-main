@@ -123,7 +123,7 @@ const Donation = () => {
                 >
                   <option value="USDT">USDT</option>
                   <option value="USDC">USDC</option>
-                  <option value="BNB">BNB</option>
+                  <option value="BNB">ETH</option>
                 </select>
               </div>
             </div>
