@@ -127,6 +127,11 @@ const Navbar = () => {
                 About Us
               </li>
             </Link>
+            <Link to="faucet">
+              <li className="px-10 hover:border-b hover:border-gray-500">
+                Faucet
+              </li>
+            </Link>
           </ul>
         </div>
       )}
