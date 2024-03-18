@@ -7,11 +7,8 @@ import { useState } from "react";
 
 
 /*  GOES LIVE ON FRIDAY
-  Zakat is a mandatory charity in Islam, one of the Five Pillars. It
-          requires Muslims to donate 2.5% of their wealth above a certain
-          threshold (nisab) annually. This charitable act serves to purify
-          wealth, provide assistance to the less fortunate, and foster communal
-          well-being.
+      Zakat chain currently operates on the BSC Chain Only, kindly convert
+            your Zakat Due to BNB, USDC or USDT to pay
 
           -- CHANGE ETH TO BNB
 
@@ -128,7 +125,11 @@ const Page = () => {
       <Navbar />
       <div className="mt-[40px] justify-center items-center">
         <p className="text-center items-center justify-center my-5 sm:mx-5 mx-2 sm:pb-12 pb-8">
-          
+          Zakat is a mandatory charity in Islam, one of the Five Pillars. It
+          requires Muslims to donate 2.5% of their wealth above a certain
+          threshold (nisab) annually. This charitable act serves to purify
+          wealth, provide assistance to the less fortunate, and foster communal
+          well-being.
         </p>
 
         <div>
@@ -186,8 +187,7 @@ const Page = () => {
         </div>
         <div className="my-[50px] flex justify-center items-center flex-col">
           <p className="font-bold justify-center align-center text-sm sm:text-lg">
-            Zakat chain currently operates on the BSC Chain Only, kindly convert
-            your Zakat Due to BNB, USDC or USDT to pay
+            
           </p>
           <div className="flex justify-end">
             <Link
