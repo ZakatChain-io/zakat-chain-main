@@ -2,13 +2,47 @@
 
 export const contractAddress = "0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F"
 
-// "0xe964142c19919Fe42390d0DF677A559748e66660"
+// "0xCe200b7877f4f864fb430b2FdbedFD8B4B6D56c7"
+
+// 
 
 export const USDCadd = "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
 
+// "0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F"
+// 
+
 export const USDTadd = "0x55d398326f99059ff775485246999027b3197955"
 
+// "0x0D5475E2A63775A81274F264DAb626bbc697d68e"
+// 
+
 export const contractABI = [
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_zakAdd",
+				"type": "address"
+			}
+		],
+		"name": "newDepAdd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "payBNB",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -56,71 +90,6 @@ export const contractABI = [
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "USDC",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "USDT",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_zakAdd",
-				"type": "address"
-			}
-		],
-		"name": "newDepAdd",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "payBNB",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -157,6 +126,45 @@ export const contractABI = [
 		"name": "transferOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "USDC",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "USDT",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{

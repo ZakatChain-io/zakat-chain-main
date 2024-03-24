@@ -58,12 +58,12 @@ export async function paybnb(amount) {
    try {
     const contract = await connectTocon();
     const amounT = toWei(amount);
-    await contract.payBNB(amounT, {gasLimit: 300000});
+    await contract.payBNB(amounT, {value: amounT, gasLimit: 300000});
     console.log("Payment Sucessfull")
     toast.success("Payment Sucessful");
    } catch (error) {
     console.log("Error paying", error);
-    toast.error("Payment error: ${error.message");
+    toast.error('Payment error: ${error.message');
     throw error;
    }
 }

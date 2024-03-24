@@ -179,7 +179,6 @@ const Page = () => {
               <input
                 type="text"
                 id="amount"
-                value={amount}
                 onChange={(e) => console.log(e)}
                 placeholder="Zakat Amount"
               />
@@ -190,6 +189,7 @@ const Page = () => {
               <input
                 id="file"
                 class="w-full border-none p-5"
+                value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
               <div className="flex justify-end">
