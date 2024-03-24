@@ -9,6 +9,8 @@ const Navbar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+    
   return (
     <nav className="relative flex justify-between py-3 items-center">
       {/* Logo */}
@@ -30,6 +32,7 @@ const Navbar = () => {
           <Link to="faucet">
             <li>Faucet</li>
           </Link>
+
         </ul>
       </div>
       {/* Button */}
@@ -55,9 +58,10 @@ const Navbar = () => {
           modalSize="wide"
           modalTitle="Connect with ZakatChain"
           className="connectButton bg-[#FF9606] text-white px-4 py-3 rounded-full cursor-pointer"
-          switchToActiveChain={true}
+          switchToActiveChain={false}
         />
         {/* </Link> */}
+
       </div>
 
       {/* Mobile Menu */}

@@ -55,20 +55,17 @@ export function toWei(amount) {
 }
 
 export async function paybnb(amount) {
-    try {
-        console.log(amount);
-        const contract = await connectTocon();
-        const bnbAmount = toWei(amount);
-        await contract.payBNB(bnbAmount, { value: bnbAmount, gasLimit: 300000});
-        console.log('Payment Successful');
-        toast.success("Payment Sucessful")
-        
-        
-    } catch (error) {
-        console.log('Error paying in BNB', error);
-        toast.error("Payment Error", error)
-        throw error;
-    }
+   try {
+    const contract = await connectTocon();
+    const amounT = toWei(amount);
+    await contract.payBNB(amounT, {gasLimit: 300000});
+    console.log("Payment Sucessfull")
+    toast.success("Payment Sucessful");
+   } catch (error) {
+    console.log("Error paying", error);
+    toast.error("Payment error: ${error.message");
+    throw error;
+   }
 }
 
 export async function payusdt(amount) {
@@ -100,34 +97,6 @@ export async function payusdc(amount) {
     } catch (error) {
         console.log('Error paying in BNB', error);
         toast.error("Payment Error", error)
-        throw error;
-    }
-}
-
-export async function usdtFaucet(address, amount) {
-    try {
-        const contract = await connectTotok();
-        const USDT = toWei(amount);
-        await contract.faucet(address, USDT);
-        console.log("Sucessfully minted", amount);
-        toast.success("Successfully minted", amount);
-    } catch (error) {
-        console.log("Error minting tokens");
-        toast.error("Error minting tokens");
-        throw error;
-    }
-}
-
-export async function usdcFaucet(address, amount) {
-    try {
-        const contract = await connectTotoc();
-        const USDC = toWei(amount);
-        await contract.faucet(address, USDC);
-        console.log("Sucessfully minted", amount);
-        toast.success("Successfully minted", amount);
-    } catch (error) {
-        console.log("Error minting tokens");
-        toast.error("Error minting tokens");
         throw error;
     }
 }

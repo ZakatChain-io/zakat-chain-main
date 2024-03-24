@@ -1,16 +1,12 @@
 
 
-export const contractAddress =  "0x613ce13348404870EB730F93d38632Cc95bdC488" // - testnet 
+export const contractAddress = "0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F"
 
-//"0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F" - mainnet
+// "0xe964142c19919Fe42390d0DF677A559748e66660"
 
-export const USDCadd = "0xB2b79F77b003BC0eA15F4EE38f750f1E15eA3DCF" //- testnet
+export const USDCadd = "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
 
-//"0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d" // - mainnet
-
-export const USDTadd =  "0x3e40bA70E4592D0A96Bf4a0c415493c084e6B8cF" //- testnet
-
-//"0x55d398326f99059ff775485246999027b3197955" // - mainnet
+export const USDTadd = "0x55d398326f99059ff775485246999027b3197955"
 
 export const contractABI = [
 	{
@@ -511,7 +507,6 @@ export const contractABi = [
 		"type": "function"
 	}
 ]
-
 
 
 

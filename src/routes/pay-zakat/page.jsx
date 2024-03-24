@@ -203,7 +203,7 @@ const Page = () => {
                 >
                   <option value="USDT">USDT</option>
                   <option value="USDC">USDC</option>
-                  <option value="BNB">ETH</option>
+                  <option value="BNB">BNB</option>
                 </select>
               </div>
             </div>

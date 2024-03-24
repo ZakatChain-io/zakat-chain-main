@@ -4,6 +4,7 @@ import HeroCarousel from "../../components/hero-carousel.component";
 import Footer from "../../components/footer-component";
 import Donation from "../../components/donate-section";
 
+
 const Donate = () => {
   return (
     <div>
