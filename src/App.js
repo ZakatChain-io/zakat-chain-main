@@ -11,25 +11,6 @@ import {ThirdwebProvider} from "@thirdweb-dev/react"
 
 import 'react-toastify/dist/ReactToastify.css';
 
-const sepolia = {
-  // Required information for connecting to the network
-  chainId: 11155111, // Chain ID of the network
-  rpc: ["11155111.rpc.thirdweb.com"], // Array of RPC URLs to use
- 
-  // Information for adding the network to your wallet (how it will appear for first time users) === \\
-  // Information about the chain's native currency (i.e. the currency that is used to pay for gas)
-  nativeCurrency: {
-    decimals: 18,
-    name: "Sepolia ETH",
-    symbol: "ETH",
-  },
-  shortName: "Sepolia", // Display value shown in the wallet UI
-  slug: "Sepolia", // Display value shown in the wallet UI
-  testnet: true, // Boolean indicating whether the chain is a testnet or mainnet
-  chain: "Ethereum-Sepolia", // Name of the network
-  name: "Ethereum Sepolia", // Name of the network
-};
-
 
 function App() {
 

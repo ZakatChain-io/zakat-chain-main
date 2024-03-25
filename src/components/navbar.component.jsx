@@ -29,10 +29,6 @@ const Navbar = () => {
           <Link to="/about">
             <li>About Us</li>
           </Link>
-          <Link to="faucet">
-            <li>Faucet</li>
-          </Link>
-
         </ul>
       </div>
       {/* Button */}
@@ -129,11 +125,6 @@ const Navbar = () => {
             <Link to="/about">
               <li className="px-10 hover:border-b hover:border-gray-500">
                 About Us
-              </li>
-            </Link>
-            <Link to="faucet">
-              <li className="px-10 hover:border-b hover:border-gray-500">
-                Faucet
               </li>
             </Link>
           </ul>

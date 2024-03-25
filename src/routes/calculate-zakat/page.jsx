@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 
 /*  GOES LIVE ON FRIDAY
@@ -187,15 +188,36 @@ const Page = () => {
         </div>
         <div className="my-[50px] flex justify-center items-center flex-col">
           <p className="font-bold justify-center align-center text-sm sm:text-lg">
-            
+            Zakat chain currently operates on the BSC Chain Only, kindly convert
+            your Zakat Due to BNB, USDC or USDT to pay
+          </p>
+          <p className="font-bold">
+            NOTE: YOUR TOTAL AMOUNT MUST BE $5000 or GREATER
           </p>
           <div className="flex justify-end">
             <Link
               to="/pay-zakat"
-              className="border rounded-lg bg-[#ff9606] p-3 text-white "
+              onClick={() => { 
+                if (calculateTotal() < 5000) { 
+                  toast.error("Not eligible to pay zakat"); 
+                } else if (exchangeValue === "" || walletsValue === "" || othersValue === "") {
+                  toast.error("Please fill in all fields"); // Show error if any field is empty
+                } else { 
+                  /* Navigate to wallet connection page */ 
+                  // You can add your navigation logic here
+                }
+              }}
+              className={`border rounded-lg bg-[#ff9606] p-3 text-white ${
+                calculateTotal() < 5000 || exchangeValue === "" || walletsValue === "" || othersValue === ""
+                  ? 'pointer-events-none opacity-50' 
+                  : ''
+              }`}
             >
               Connect Wallet to proceed
-            </Link>
+          </Link>
+
+
+
           </div>
         </div>
       </div>
