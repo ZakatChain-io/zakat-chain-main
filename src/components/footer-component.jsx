@@ -57,7 +57,7 @@ const Footer = () => {
               <p>
                 Contact Us{" "}
                 <span className="text-[#FF9606] underline">
-                  hello@zakatchain.com
+                  hello@zakatchain.io
                 </span>
               </p>
             </div>
