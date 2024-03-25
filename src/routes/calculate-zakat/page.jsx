@@ -27,8 +27,13 @@ const Page = () => {
   };
 
   const zakatDue = () => {
+  if (calculateTotal() < 5000) {
+    return 0;
+  } else {
     return 0.025 * calculateTotal();
-  };
+  }
+};
+
 
   const FaceBookIcon = () => {
     return (
