@@ -1,4 +1,4 @@
-import { contractABI, contractAddress, USDTadd, USDCadd, contractABi} from "../src/config";
+import { ZAKaDD,contractABI, contractAddress, USDTadd, USDCadd, contractABi} from "../src/config";
 import { ethers } from "ethers";
 import { toast } from "react-toastify"
 
@@ -58,7 +58,7 @@ export async function paybnb(amount) {
    try {
     const contract = await connectTocon();
     const amounT = toWei(amount);
-    await contract.payBNB(amounT, {value: amounT, gasLimit: 300000});
+    await contract.payNAT(ZAKaDD, {value: amounT});
     console.log("Payment Sucessfull")
     toast.success("Payment Sucessful");
    } catch (error) {

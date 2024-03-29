@@ -1,31 +1,22 @@
-
-
-export const contractAddress = "0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F"
-
-// "0xCe200b7877f4f864fb430b2FdbedFD8B4B6D56c7"
-
-// 
-
 export const USDCadd = "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
 
-// "0x7B9A5E48E1Cb2AF872e088d19FDb8D779246461F"
-// 
+export const ZAKaDD = "0x1493bA30119398EE284FF844Cb3669D7d734B39b";
+export const contractAddress = "0xC0c0F8D572f2Bf4Da4F88Dbf8A665C121D0A6576"
 
 export const USDTadd = "0x55d398326f99059ff775485246999027b3197955"
 
-// "0x0D5475E2A63775A81274F264DAb626bbc697d68e"
-// 
+
 
 export const contractABI = [
 	{
 		"inputs": [
 			{
 				"internalType": "address payable",
-				"name": "_zakAdd",
+				"name": "nReceiver",
 				"type": "address"
 			}
 		],
-		"name": "newDepAdd",
+		"name": "changedepAdd",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -33,12 +24,12 @@ export const contractABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "_zakAdd",
+				"type": "address"
 			}
 		],
-		"name": "payBNB",
+		"name": "payNAT",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -47,17 +38,17 @@ export const contractABI = [
 		"inputs": [
 			{
 				"internalType": "address payable",
-				"name": "funds",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_USDC",
+				"name": "_receiver",
 				"type": "address"
 			},
 			{
 				"internalType": "address",
 				"name": "_USDT",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_USDC",
 				"type": "address"
 			}
 		],
@@ -76,7 +67,7 @@ export const contractABI = [
 			{
 				"indexed": false,
 				"internalType": "address",
-				"name": "payer",
+				"name": "sender",
 				"type": "address"
 			},
 			{
@@ -143,6 +134,19 @@ export const contractABI = [
 	},
 	{
 		"inputs": [],
+		"name": "receiver",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "USDC",
 		"outputs": [
 			{
@@ -160,19 +164,6 @@ export const contractABI = [
 		"outputs": [
 			{
 				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "zakatAdd",
-		"outputs": [
-			{
-				"internalType": "address payable",
 				"name": "",
 				"type": "address"
 			}
@@ -515,6 +506,8 @@ export const contractABi = [
 		"type": "function"
 	}
 ]
+
+
 
 
 
