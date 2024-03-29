@@ -1,12 +1,11 @@
-export const USDCadd = "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+export const USDCadd = "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d" // USDC CA
+export const ZAKaDD = "0x1493bA30119398EE284FF844Cb3669D7d734B39b"; // ZAKAT ADDRESS
+export const contractAddress = "0xC0c0F8D572f2Bf4Da4F88Dbf8A665C121D0A6576" // CONTRACT ADDRESS
 
-export const ZAKaDD = "0x1493bA30119398EE284FF844Cb3669D7d734B39b";
-export const contractAddress = "0xC0c0F8D572f2Bf4Da4F88Dbf8A665C121D0A6576"
-
-export const USDTadd = "0x55d398326f99059ff775485246999027b3197955"
-
+export const USDTadd = "0x55d398326f99059ff775485246999027b3197955" // USDT ADDRESS
 
 
+// Contract ABI of payment contract
 export const contractABI = [
 	{
 		"inputs": [
@@ -173,6 +172,7 @@ export const contractABI = [
 	}
 ]
 
+// Contract ABI of BEP20 tokens
 export const contractABi = [
 	{
 		"inputs": [],
