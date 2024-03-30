@@ -7,11 +7,34 @@ import crying from "../../src/assets/crying.jpeg";
 import { toast } from "react-toastify";
 import { payusdc, payusdt, paybnb } from "../contract con";
 import { useAddress } from "@thirdweb-dev/react";
+import { supabase } from "../supabaseClient";
 
 const Donation = () => {
   const [token, setToken] = useState("USDT");
   const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState(null);
   const  address  = useAddress();
+
+    const storeData =  async (topic) => {
+    try {
+      const {data, error} = await supabase
+    .from("Sadaq")
+    .upsert([
+      {message: message, amount: amount, cause: selectedTopic ,address: address, token: token}
+    ])
+    .select();
+
+    if (error) {
+      console.error("Error storing", error.message);
+    } else {
+      console.log("Sucessful", data)
+      console.log(data);
+    }
+    } catch (error) {
+      console.error("Failed", error.message);
+    }
+  }
 
   let cutAddress = "";
   if (address) {
@@ -42,6 +65,17 @@ const Donation = () => {
           break;
       }
       console.log("Payment Sucessful");
+
+      await storeData(selectedTopic);
+      console.log("Data stored successfully after payment");
+
+        setToken("USDT");
+      setAmount("");
+      setMessage("");
+    // Reset selected topic only if it's not null
+      if (selectedTopic !== null) {
+        setSelectedTopic(null);
+      }
     } catch (error) {
       console.error("Payment Unsuccessful");
     }
@@ -70,6 +104,8 @@ const Donation = () => {
       img: sick,
     },
   ];
+
+  console.log(selectedTopic);
 
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
@@ -149,13 +185,18 @@ const Donation = () => {
             <input
               id="file"
               class=" p-3 sm:p-5 rounded-lg sm:my-5 my-2  border border-gray-700"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="(optional)"
             />
 
             <div className="!justify-end !items-end !flex">
               <button
                 className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto"
-                onClick={handlePay}
+                onClick={() => {
+                  setSelectedTopic(detail.topic);
+                  handlePay(); 
+                }}
               >
                 Donate
               </button>

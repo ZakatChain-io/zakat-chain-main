@@ -9,20 +9,42 @@ import { useState } from "react";
 import { paybnb, payusdt, payusdc } from "../../contract con";
 import { toast } from "react-toastify";
 import Navbar from "../../components/navbar.component";
+import {supabase} from "../../supabaseClient";
 
 
 
 const Page = () => {
   const [amount, setAmount] = useState("");
   const [token, setToken] = useState("USDT");
+  const [message, setMessage] = useState("")
   const address = useAddress();
   // const router = useRouter();
   // const connectedAddress = router.query.address;
+
+  const storeData =  async () => {
+    try {
+      const {data, error} = await supabase
+    .from("Zakat Payment")
+    .upsert([
+      {Message: message, amount: amount, address: address, token: token}
+    ])
+    .select();
+
+    if (error) {
+      console.error("Error storing", error.message);
+    } else {
+      console.log("Sucessful", data)
+    }
+    } catch (error) {
+      console.error("Failed", error.message);
+    }
+  }
 
   let cutAddress = "";
   if (address) {
     cutAddress = address.slice(0, 6) + "..." + address.slice(-4);
   }
+
 
   const handlePay = async () => {
     const numericAmount = parseFloat(amount);
@@ -48,9 +70,15 @@ const Page = () => {
           break;
       }
       console.log("Payment Sucessful");
+
+      await storeData();
+      console.log("Data stored successfully after payment");
+
     } catch (error) {
       console.error("Payment Unsuccessful");
     }
+
+    
   };
 
   const FaceBookIcon = () => {
@@ -212,6 +240,8 @@ const Page = () => {
             <input
               id="file"
               class=" p-5 rounded-lg my-5  border"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="(optional)"
             />
 
