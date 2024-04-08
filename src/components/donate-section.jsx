@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import sick from "../../src/assets/help-treat-a-sick-muslim.png";
+import feed from "../../src/assets/images.jpeg";
 import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
 import support from "../../src/assets/support-an-orphan-through-school.png";
 import crying from "../../src/assets/crying.jpeg";
@@ -14,27 +14,33 @@ const Donation = () => {
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
   const [selectedTopic, setSelectedTopic] = useState(null);
-  const  address  = useAddress();
+  const address = useAddress();
 
-    const storeData =  async (topic) => {
+  const storeData = async (topic) => {
     try {
-      const {data, error} = await supabase
-    .from("Sadaq")
-    .upsert([
-      {message: message, amount: amount, cause: selectedTopic ,address: address, token: token}
-    ])
-    .select();
+      const { data, error } = await supabase
+        .from("Sadaq")
+        .upsert([
+          {
+            message: message,
+            amount: amount,
+            cause: selectedTopic,
+            address: address,
+            token: token,
+          },
+        ])
+        .select();
 
-    if (error) {
-      console.error("Error storing", error.message);
-    } else {
-      console.log("Sucessful", data)
-      console.log(data);
-    }
+      if (error) {
+        console.error("Error storing", error.message);
+      } else {
+        console.log("Sucessful", data);
+        console.log(data);
+      }
     } catch (error) {
       console.error("Failed", error.message);
     }
-  }
+  };
 
   let cutAddress = "";
   if (address) {
@@ -69,10 +75,10 @@ const Donation = () => {
       await storeData(selectedTopic);
       console.log("Data stored successfully after payment");
 
-        setToken("USDT");
+      setToken("USDT");
       setAmount("");
       setMessage("");
-    // Reset selected topic only if it's not null
+      // Reset selected topic only if it's not null
       if (selectedTopic !== null) {
         setSelectedTopic(null);
       }
@@ -99,9 +105,14 @@ const Donation = () => {
       img: tap,
     },
     {
-      topic: "Help treat a sick Muslim",
-      subTopic: `"Treat your sick ones with charity." (Saheeh al-Jaami)`,
-      img: sick,
+      topic: "Zakat Fitr",
+      subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, 
+                  it is accepted as Zakat, but whoever pays it after the prayer, 
+                  it is simply a form of charity.
+                  "
+                 Pay Zakatul-Fitr for each family member using the value of any 
+                  of the listed food items.`,
+      img: feed,
     },
   ];
 
@@ -110,12 +121,12 @@ const Donation = () => {
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
       {details.map((detail, index) => (
-        <div className="p-5 sm:my-12 my-4 border rounded-lg">
+        <div className="p-5 sm:my-12 my-4 border rounded-lg" key={index}>
           <div className="  p-2 sm:p-6 justify-between rounded-lg text-black grid grid-cols-2 gap-4 items-center xl:gap-16 sm:py-8 xl:px-12 ">
             <div className="m-auto sm:h-[280px] h-48 overflow-hidden items-center justify-center ">
               <img
                 src={detail.img}
-                alt="sick treatment"
+                alt="feed treatment"
                 className="w-full h-full rounded-lg"
               />
             </div>
@@ -130,14 +141,8 @@ const Donation = () => {
           </div>
           <div className="flex flex-col">
             <div className="justify-end items-end flex pt-5">
-              <p className="w-auto p-3 border rounded-full "> { cutAddress } </p>
+              <p className="w-auto p-3 border rounded-full "> {cutAddress} </p>
             </div>
-            {/* <input
-              id="file"
-              className="p-3 sm:p-5 rounded-lg my-5 w-full border border-gray-700"
-              value={selectedValue}
-              onChange={(e) => setSelectedValue(e.target.value)}
-            /> */}
             <div
               key={index}
               className="flex justify-between p-[6px] sm:p-2 rounded-lg my-1 sm:my-3 border border-gray-700"
@@ -145,7 +150,7 @@ const Donation = () => {
               <input
                 id="file"
                 className="w-full border-none p-2"
-                value={ amount }
+                value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
               <div className="flex justify-end">
@@ -163,19 +168,30 @@ const Donation = () => {
                 </select>
               </div>
             </div>
-            {/* Buttons */}
+            {detail.topic === "Zakat Fitr" && (
+            <div className="mt-3">
+              <div className="percentages justify-center items-center gap-5 flex flex-row mb-5">
+                <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+                  Rice -$3.5
+                </button>
+                <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white">
+                  Beans - $2.9
+                </button>
+                <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block">
+                  Maize - $1.5
+                </button>
+              </div>
+            </div>
+)}
+
             <div className="percentages justify-center items-center gap-5 flex flex-row">
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-              onClick={() => setAmount("25")}>
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white" onClick={() => setAmount("25")}>
                 25 USDT
               </button>
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white"
-              onClick={() => setAmount("50")}>
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white" onClick={() => setAmount("50")}>
                 50 USDT
               </button>
-              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block"
-              onClick={() => setAmount("100")}
-              >
+              <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block" onClick={() => setAmount("100")}>
                 100 USDT
               </button>
             </div>
@@ -195,7 +211,7 @@ const Donation = () => {
                 className=" rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white w-auto"
                 onClick={() => {
                   setSelectedTopic(detail.topic);
-                  handlePay(); 
+                  handlePay();
                 }}
               >
                 Donate
