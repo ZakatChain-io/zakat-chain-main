@@ -105,6 +105,7 @@ const Donation = () => {
       img: tap,
     },
     {
+      id: "zakat-fitr",
       topic: "Zakat Fitr",
       subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, 
                   it is accepted as Zakat, but whoever pays it after the prayer, 
@@ -121,7 +122,7 @@ const Donation = () => {
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
       {details.map((detail, index) => (
-        <div className="p-5 sm:my-12 my-4 border rounded-lg" key={index}>
+        <div className="p-5 sm:my-12 my-4 border rounded-lg" id={detail.id} key={index}>
           <div className="  p-2 sm:p-6 justify-between rounded-lg text-black grid grid-cols-2 gap-4 items-center xl:gap-16 sm:py-8 xl:px-12 ">
             <div className="m-auto sm:h-[280px] h-48 overflow-hidden items-center justify-center ">
               <img
@@ -184,7 +185,7 @@ const Donation = () => {
             </div>
 )}
 
-            <div className="percentages justify-center items-center gap-5 flex flex-row">
+            {/* <div className="percentages justify-center items-center gap-5 flex flex-row">
               <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white" onClick={() => setAmount("25")}>
                 25 USDT
               </button>
@@ -194,7 +195,7 @@ const Donation = () => {
               <button className="rounded-full py-2 sm:py-3.5 px-4 sm:px-7 bg-[#17163e] hover:bg-[#17163eaa] text-white hidden md:block" onClick={() => setAmount("100")}>
                 100 USDT
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col">
             <label className="text-gray-700 ">Message </label>

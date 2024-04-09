@@ -4,7 +4,8 @@ import { ReactComponent as DropdownIcon } from "../assets/dropdown-icon.svg";
 import FeedThePoor from "../assets/feed-the-poor.png";
 import SupportAnOrphan from "../assets/support-an-orphan-through-school.png";
 import ProvideAccessToClean from "../assets/provide-access-to-clean-and-safe-water.png";
-import HelpTreatASickMuslim from "../assets/help-treat-a-sick-muslim.png";
+// import HelpTreatASickMuslim from "../assets/help-treat-a-sick-muslim.png";
+import feed from "../../src/assets/images.jpeg";
 import { Link } from "react-router-dom";
 
 const SadaqhDropdown = () => {
@@ -18,23 +19,27 @@ const SadaqhDropdown = () => {
       subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
       of Resurrection” (Al-Tirmidhi).`,
       img: FeedThePoor,
+      to: "/donate/poor",
     },
     {
       topic: "Support an orphan through school",
       subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
       Empower an orphan fulfill their educational aspirations.`,
       img: SupportAnOrphan,
+      to: "/donate/orphan",
     },
     {
       topic: "Provide access to clean and safe water",
       subTopic: `"The best form of charity is giving water to drink." (Ibn
         Majah)`,
       img: ProvideAccessToClean,
+      to: "/donate/water",
     },
     {
-      topic: "Help treat a sick Muslim",
-      subTopic: `"Treat your sick ones with charity." (Saheeh al-Jaami)`,
-      img: HelpTreatASickMuslim,
+      topic: "Zakat ul-Fitr",
+      subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, it is accepted as Zakat, but whoever pays it after the prayer, it is simply a form of charity. " Pay Zakatul-Fitr for each family member using the value of any of the listed food items.`,
+      img: feed,
+      to: "/donate#zakat-fitr",
     },
   ];
   return (
@@ -76,7 +81,7 @@ const SadaqhDropdown = () => {
                     />
                   </div>
                   <Link
-                    to="/donate"
+                    to={detail.to}
                     className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
                   >
                     Donate
@@ -90,7 +95,7 @@ const SadaqhDropdown = () => {
                     {detail.subTopic}
                   </p>
                   <Link
-                    to="/donate"
+                    to={detail.to}
                     className="bg-white text-black rounded-full px-3 py-1 sm:px-5 sm:py-3 text-lg self-start sm:block hidden "
                   >
                     Donate

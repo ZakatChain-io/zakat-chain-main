@@ -12,7 +12,7 @@ const Navbar = () => {
 
     
   return (
-    <nav className="relative flex justify-between py-3 items-center">
+    <nav className="sticky bg-white z-50 left-0 top-0 flex justify-between py-3 items-center">
       {/* Logo */}
       <div>
         <Link to="/">

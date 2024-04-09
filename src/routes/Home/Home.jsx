@@ -9,7 +9,7 @@ import Footer from "../../components/footer-component";
 const Home = () => {
   return (
     <div>
-      <div className="mx-[3%]">
+      <div className="relative mx-[3%]">
         <Navbar />
         <HeroCarousel />
         <ZakatDropdown />
