@@ -19,21 +19,21 @@ const SadaqhDropdown = () => {
       subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
       of Resurrection” (Al-Tirmidhi).`,
       img: FeedThePoor,
-      to: "/donate/poor",
+      to: "/donate#poor",
     },
     {
       topic: "Support an orphan through school",
       subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
       Empower an orphan fulfill their educational aspirations.`,
       img: SupportAnOrphan,
-      to: "/donate/orphan",
+      to: "/donate#orphan",
     },
     {
       topic: "Provide access to clean and safe water",
       subTopic: `"The best form of charity is giving water to drink." (Ibn
         Majah)`,
       img: ProvideAccessToClean,
-      to: "/donate/water",
+      to: "/donate#water",
     },
     {
       topic: "Zakat ul-Fitr",
@@ -80,12 +80,12 @@ const SadaqhDropdown = () => {
                       className="h-full w-full"
                     />
                   </div>
-                  <Link
-                    to={detail.to}
+                  <a
+                    href={detail.to}
                     className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
                   >
                     Donate
-                  </Link>
+                  </a>
                 </div>
                 <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-8 md:ml-32 ">
                   <h1 className="text-[15px] sm:text-2xl font-bold text-white">
