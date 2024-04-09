@@ -80,12 +80,13 @@ const SadaqhDropdown = () => {
                       className="h-full w-full"
                     />
                   </div>
-                  <a
-                    href={detail.to}
+                  <Link
+                    to={detail.to}
+                    reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
                   >
                     Donate
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-8 md:ml-32 ">
                   <h1 className="text-[15px] sm:text-2xl font-bold text-white">
@@ -96,6 +97,7 @@ const SadaqhDropdown = () => {
                   </p>
                   <Link
                     to={detail.to}
+                    reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 sm:px-5 sm:py-3 text-lg self-start sm:block hidden "
                   >
                     Donate
