@@ -4,12 +4,14 @@ import circle from "../../assets/black_n_white.jpeg";
 // import { ReactComponent as FooterZakatIcon } from "../assets/footer-zakat-chain-logo.svg";
 import { ReactComponent as FooterZakatIcon } from "../../assets/footer-zakat-chain-logo.svg";
 import { useAddress } from "@thirdweb-dev/react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 // import { useRouter } from "next/router";
 import { paybnb, payusdt, payusdc } from "../../contract con";
 import { toast } from "react-toastify";
 import Navbar from "../../components/navbar.component";
 import {supabase} from "../../supabaseClient";
+import { ChainContext } from "../../context/chain";
+
 
 
 
@@ -18,15 +20,18 @@ const Page = () => {
   const [token, setToken] = useState("USDT");
   const [message, setMessage] = useState("")
   const address = useAddress();
-  // const router = useRouter();
-  // const connectedAddress = router.query.address;
+  const {contractAddresses,zakatAddresses ,usdcChain ,selectedChain} = useContext(ChainContext);
+  const contractAddress = contractAddresses[selectedChain];
+  const zakatAddress = zakatAddresses[selectedChain];
+  const usdcAddress = usdcChain[selectedChain];
+ 
 
   const storeData =  async () => {
     try {
       const {data, error} = await supabase
     .from("Zakat Payment")
     .upsert([
-      {Message: message, amount: amount, address: address, token: token}
+      {Message: message, amount: amount, address: address, token: token, Chain: selectedChain}
     ])
     .select();
 
@@ -48,6 +53,7 @@ const Page = () => {
 
   const handlePay = async () => {
     const numericAmount = parseFloat(amount);
+    
 
     if (isNaN(numericAmount) || numericAmount <= 0) {
       toast.error("Please enter a valid number");
@@ -57,13 +63,13 @@ const Page = () => {
     try {
       switch (token) {
         case "USDT":
-          await payusdt(numericAmount);
+          await payusdt(numericAmount, contractAddress, selectedChain);
           break;
         case "USDC":
-          await payusdc(numericAmount);
+          await payusdc(numericAmount, contractAddress, usdcAddress, selectedChain);
           break;
         case "BNB":
-          await paybnb(numericAmount);
+          await paybnb(numericAmount, contractAddress , zakatAddress);
           break;
         default:
           toast.error("Invalid token selection");

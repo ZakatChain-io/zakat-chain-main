@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { ReactComponent as Logo } from "../assets/zakat-chain-logo.svg";
 import { Link } from "react-router-dom";
 import { ConnectWallet, lightTheme } from "@thirdweb-dev/react";
+import { ChainContext } from "../context/chain";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { selectedChain,setselectedChain } = useContext(ChainContext);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -12,7 +14,7 @@ const Navbar = () => {
 
     
   return (
-    <nav className="sticky bg-white z-50 left-0 top-0 flex justify-between py-3 items-center">
+    <nav className="relative flex justify-between py-3 items-center">
       {/* Logo */}
       <div>
         <Link to="/">
@@ -29,6 +31,10 @@ const Navbar = () => {
           <Link to="/about">
             <li>About Us</li>
           </Link>
+          <Link to="faucet">
+            <li>Faucet</li>
+          </Link>
+
         </ul>
       </div>
       {/* Button */}
@@ -58,6 +64,15 @@ const Navbar = () => {
         />
         {/* </Link> */}
 
+        <select
+         value={selectedChain}
+         onChange={(e) => {
+          setselectedChain(e.target.value)
+         }}
+         >
+          <option value="base">Base</option>
+          <option value="binance">BSC</option>
+        </select>
       </div>
 
       {/* Mobile Menu */}
@@ -127,7 +142,21 @@ const Navbar = () => {
                 About Us
               </li>
             </Link>
+            <Link to="faucet">
+              <li className="px-10 hover:border-b hover:border-gray-500">
+                Faucet
+              </li>
+            </Link>
           </ul>
+            <select
+          value={selectedChain}
+          onChange={(e) => {
+          setselectedChain(e.target.value)
+         }}
+          >
+            <option value="base">Base</option>
+            <option value="binance">BSC</option>
+        </select>
         </div>
       )}
     </nav>

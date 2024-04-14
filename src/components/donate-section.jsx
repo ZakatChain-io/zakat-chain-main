@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import feed from "../../src/assets/images.jpeg";
 import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
 import support from "../../src/assets/support-an-orphan-through-school.png";
@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { payusdc, payusdt, paybnb } from "../contract con";
 import { useAddress } from "@thirdweb-dev/react";
 import { supabase } from "../supabaseClient";
+import { ChainContext } from "../context/chain";
 
 const Donation = () => {
   const [token, setToken] = useState("USDT");
@@ -15,6 +16,12 @@ const Donation = () => {
   const [message, setMessage] = useState("");
   const [selectedTopic, setSelectedTopic] = useState(null);
   const address = useAddress();
+  const {contractAddresses,zakatAddresses, usdcChain,selectedChain, } = useContext(ChainContext);
+  const contractAddress = contractAddresses[selectedChain];
+  const zakatAddress = zakatAddresses[selectedChain];
+   const usdcAddress = usdcChain[selectedChain];
+
+ 
 
   const storeData = async (topic) => {
     try {
@@ -27,6 +34,7 @@ const Donation = () => {
             cause: selectedTopic,
             address: address,
             token: token,
+            Chain: selectedChain
           },
         ])
         .select();
@@ -58,13 +66,13 @@ const Donation = () => {
     try {
       switch (token) {
         case "USDT":
-          await payusdt(numericAmount);
+          await payusdt(numericAmount, contractAddress, selectedChain);
           break;
         case "USDC":
-          await payusdc(numericAmount);
+          await payusdc(numericAmount, contractAddress, usdcAddress, selectedChain);
           break;
         case "BNB":
-          await paybnb(numericAmount);
+          await paybnb(numericAmount,contractAddress, zakatAddress);
           break;
         default:
           toast.error("Invalid token selection");
@@ -117,7 +125,7 @@ const Donation = () => {
     },
   ];
 
-  console.log(selectedTopic);
+
 
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
@@ -202,7 +210,7 @@ const Donation = () => {
             <input
               id="file"
               class=" p-3 sm:p-5 rounded-lg sm:my-5 my-2  border border-gray-700"
-              value={message}
+              value={message}s
               onChange={(e) => setMessage(e.target.value)}
               placeholder="(optional)"
             />
