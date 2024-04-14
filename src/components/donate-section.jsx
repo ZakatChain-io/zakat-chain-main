@@ -97,17 +97,20 @@ const Donation = () => {
 
   const details = [
     {
+      id: "poor",
       topic: "Donate to the poor",
       subTopic: `"He who feeds an hungry person would be fed by Allah on the Day of Resurrection" (Al Tirmidhi)`,
       img: crying,
     },
     {
+      id: "orphan",
       topic: "Support an orphan through school",
       subTopic:
         "Through ZakatChain, you can make an orphan smile, always. There's an estimated 153 million orphans in the world today, your token will go a long way in catering for some of them.",
       img: support,
     },
     {
+      id: "water",
       topic: "Provide access to clean and safe water",
       subTopic: `"The best form of charity is giving water to drink." (Ibn Majah).`,
       img: tap,
@@ -130,7 +133,7 @@ const Donation = () => {
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container">
       {details.map((detail, index) => (
-        <div className="p-5 sm:my-12 my-4 border rounded-lg" id={detail.id} key={index}>
+        <div id={detail.id} className="p-5 sm:my-12 my-4 border rounded-lg" key={index}>
           <div className="  p-2 sm:p-6 justify-between rounded-lg text-black grid grid-cols-2 gap-4 items-center xl:gap-16 sm:py-8 xl:px-12 ">
             <div className="m-auto sm:h-[280px] h-48 overflow-hidden items-center justify-center ">
               <img

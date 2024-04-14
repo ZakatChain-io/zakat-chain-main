@@ -19,21 +19,21 @@ const SadaqhDropdown = () => {
       subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
       of Resurrection” (Al-Tirmidhi).`,
       img: FeedThePoor,
-      to: "/donate/poor",
+      to: "/donate#poor",
     },
     {
       topic: "Support an orphan through school",
       subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
       Empower an orphan fulfill their educational aspirations.`,
       img: SupportAnOrphan,
-      to: "/donate/orphan",
+      to: "/donate#orphan",
     },
     {
       topic: "Provide access to clean and safe water",
       subTopic: `"The best form of charity is giving water to drink." (Ibn
         Majah)`,
       img: ProvideAccessToClean,
-      to: "/donate/water",
+      to: "/donate#water",
     },
     {
       topic: "Zakat ul-Fitr",
@@ -82,6 +82,7 @@ const SadaqhDropdown = () => {
                   </div>
                   <Link
                     to={detail.to}
+                    reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
                   >
                     Donate
@@ -96,6 +97,7 @@ const SadaqhDropdown = () => {
                   </p>
                   <Link
                     to={detail.to}
+                    reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 sm:px-5 sm:py-3 text-lg self-start sm:block hidden "
                   >
                     Donate

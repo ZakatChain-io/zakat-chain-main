@@ -8,6 +8,7 @@ import Donation from "../../components/donate-section";
 const Donate = () => {
   return (
     <div>
+      <div id="#top" className="absolute top-0 hidden"></div>
       <div className="mx-[3%]">
         <Navbar />
         <HeroCarousel />
