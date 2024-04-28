@@ -136,15 +136,10 @@ const Navbar = () => {
               <li className="px-10 hover:border-b hover:border-gray-500">About Us</li>
             </Link>
           </ul>
-          <select
-            value={selectedChain}
-            onChange={(e) => {
-              setselectedChain(e.target.value);
-            }}
-          >
-            <option value="base">Base</option>
-            <option value="binance">BSC</option>
-          </select>
+          <div className="p-2 border border-blue-500 chain-dropdown mx-3 bg-gray-700 text-white font-semibold rounded-lg" ref={dropdownRef}>
+
+<CustomDropdown options={options} isOpen={isOpen} handleClick={handleClick} />
+</div>
         </div>
       )}
     </nav>
