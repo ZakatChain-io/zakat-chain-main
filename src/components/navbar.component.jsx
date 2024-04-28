@@ -9,7 +9,7 @@ import CustomDropdown from './CustomDropdown'; // Import the CustomDropdown comp
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { selectedChain, setselectedChain } = useContext(ChainContext);
+  const { setselectedChain } = useContext(ChainContext);
   const dropdownRef = useRef(null);
 
   const handleClick = () => {
@@ -78,9 +78,9 @@ const Navbar = () => {
           className="connectButton bg-[#FF9606] text-white px-4 py-3 rounded-full cursor-pointer"
           switchToActiveChain={true}
         />
-        <div className="p-2 border border-blue-500 chain-dropdown mx-3 bg-gray-700 text-white font-semibold rounded-lg" ref={dropdownRef}>
+        <div className="p-2 border border-gray chain-dropdown mx-3 bg- text-white font-semibold rounded-lg" ref={dropdownRef}>
 
-          <CustomDropdown options={options} isOpen={isOpen} handleClick={handleClick} />
+          <CustomDropdown options={options} isOpen={isOpen} handleClick={handleClick} setselectedChain={setselectedChain}/>
         </div>
       </div>
       {/* Mobile Menu */}
@@ -125,20 +125,20 @@ const Navbar = () => {
         <div className="absolute bg-white top-[100%] z-30 right-0 border-t border-[#FF9606]">
           <ul className="flex flex-col space-y-4 py-3 md:hidden">
             <Link to="/">
-              <li className="px-10 hover:border-b hover:border-gray-500">Home</li>
+              <li className="px-10 hover:bg-gray-300">Home</li>
             </Link>
             <Link>
-              <li className="px-10 hover:border-b hover:border-gray-500">
+              <li className="px-10 hover:bg-gray-300">
                 <a href="#showcase">Showcase</a>
               </li>
             </Link>
             <Link to="/about">
-              <li className="px-10 hover:border-b hover:border-gray-500">About Us</li>
+              <li className="px-10 hover:bg-gray-300 hover:gray">About Us</li>
             </Link>
           </ul>
-          <div className="p-2 border border-blue-500 chain-dropdown mx-3 bg-gray-700 text-white font-semibold rounded-lg" ref={dropdownRef}>
+          <div className="p-2 border border-gray chain-dropdown mx-3 bg-white text-white font-semibold rounded-lg" ref={dropdownRef}>
 
-<CustomDropdown options={options} isOpen={isOpen} handleClick={handleClick} />
+<CustomDropdown options={options} isOpen={isOpen} handleClick={handleClick} setselectedChain={setselectedChain} />
 </div>
         </div>
       )}
