@@ -191,3 +191,8 @@ code {
   background: transparent;
   color: white;
 }
+
+
+.chain-dropdown  img{
+  z-index: 99999 !important;
+}
