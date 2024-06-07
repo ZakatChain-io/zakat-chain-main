@@ -19,27 +19,27 @@ const SadaqhDropdown = () => {
       subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
       of Resurrection” (Al-Tirmidhi).`,
       img: FeedThePoor,
-      to: "/donate#poor",
+      to: "/donate",
     },
     {
       topic: "Support an orphan through school",
       subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
       Empower an orphan fulfill their educational aspirations.`,
       img: SupportAnOrphan,
-      to: "/donate#orphan",
+      to: "/donate",
     },
     {
       topic: "Provide access to clean and safe water",
       subTopic: `"The best form of charity is giving water to drink." (Ibn
         Majah)`,
       img: ProvideAccessToClean,
-      to: "/donate#water",
+      to: "/donate",
     },
     {
       topic: "Zakat ul-Fitr",
       subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, it is accepted as Zakat, but whoever pays it after the prayer, it is simply a form of charity. " Pay Zakatul-Fitr for each family member using the value of any of the listed food items.`,
       img: feed,
-      to: "/donate#zakat-fitr",
+      to: "/donate",
     },
   ];
   return (
