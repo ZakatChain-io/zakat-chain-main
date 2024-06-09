@@ -64,7 +64,7 @@ const SadaqhDropdown = () => {
             to="/donate"
             className="bg-white rounded-full py-2 px-2 sm:px-6"
           >
-            Pay Now
+             Donate
           </Link>
         </div>
       </div>
