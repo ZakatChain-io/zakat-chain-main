@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/sadaqah-dropdown-logo.svg";
 import { ReactComponent as DropdownIcon } from "../assets/dropdown-icon.svg";
-// import FeedThePoor from "../assets/feed-the-poor.png";
-// import SupportAnOrphan from "../assets/support-an-orphan-through-school.png";
-// import ProvideAccessToClean from "../assets/provide-access-to-clean-and-safe-water.png";
+import FeedThePoor from "../assets/feed-the-poor.png";
+import SupportAnOrphan from "../assets/support-an-orphan-through-school.png";
+import ProvideAccessToClean from "../assets/provide-access-to-clean-and-safe-water.png";
 // import HelpTreatASickMuslim from "../assets/help-treat-a-sick-muslim.png";
 import feed from "../../src/assets/images.jpeg";
 import { Link } from "react-router-dom";
@@ -13,37 +13,35 @@ const SadaqhDropdown = () => {
   const handleDropdown = () => {
     setIsDropped(!isDropped);
   };
-
-  // const details = [
-  //   {
-  //     topic: "Feed The Poor",
-  //     subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
-  //     of Resurrection” (Al-Tirmidhi).`,
-  //     img: FeedThePoor,
-  //     to: "/donate",
-  //   },
-  //   {
-  //     topic: "Support an orphan through school",
-  //     subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
-  //     Empower an orphan fulfill their educational aspirations.`,
-  //     img: SupportAnOrphan,
-  //     to: "/donate",
-  //   },
-  //   {
-  //     topic: "Provide access to clean and safe water",
-  //     subTopic: `"The best form of charity is giving water to drink." (Ibn
-  //       Majah)`,
-  //     img: ProvideAccessToClean,
-  //     to: "/donate",
-  //   },
-  //   {
-  //     topic: "Zakat ul-Fitr",
-  //     subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, it is accepted as Zakat, but whoever pays it after the prayer, it is simply a form of charity. " Pay Zakatul-Fitr for each family member using the value of any of the listed food items.`,
-  //     img: feed,
-  //     to: "/donate",
-  //   },
-  // ];
-
+  const details = [
+    {
+      topic: "Feed The Poor",
+      subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
+      of Resurrection” (Al-Tirmidhi).`,
+      img: FeedThePoor,
+      to: "/donate",
+    },
+    {
+      topic: "Support an orphan through school",
+      subTopic: `“Seeking knowledge is a duty upon every Muslim.” (Ibn Majah).
+      Empower an orphan fulfill their educational aspirations.`,
+      img: SupportAnOrphan,
+      to: "/donate",
+    },
+    {
+      topic: "Provide access to clean and safe water",
+      subTopic: `"The best form of charity is giving water to drink." (Ibn
+        Majah)`,
+      img: ProvideAccessToClean,
+      to: "/donate",
+    },
+    {
+      topic: "Zakat ul-Fitr",
+      subTopic: `"Whoever pays the Zakatul-Fitr before the Eid prayer, it is accepted as Zakat, but whoever pays it after the prayer, it is simply a form of charity. " Pay Zakatul-Fitr for each family member using the value of any of the listed food items.`,
+      img: feed,
+      to: "/donate",
+    },
+  ];
   return (
     <div className="bg-[#17163E] rounded-lg md:px-7">
       <div className="pt-2 px-1 flex justify-between mt-5 space-x-4 sm:px-3 md:space-x-0">
@@ -70,7 +68,7 @@ const SadaqhDropdown = () => {
       </div>
 
       <div className="flex flex-col">
-        {/* {isDropped && (
+        {isDropped && (
           <div className="border-t border-white mt-5 px-3">
             {details.map((detail, index) => (
               <div className="flex flex-row p-4">
@@ -82,13 +80,13 @@ const SadaqhDropdown = () => {
                       className="h-full w-full"
                     />
                   </div>
-                  <Link
+                  {/* <Link
                     to="/donate"
                     reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 self-start block sm:hidden my-3"
                   >
-                    Donate
-                  </Link>
+                    
+                  </Link> */}
                 </div>
                 <div className="flex flex-col ml-5 gap-y-2 w-1/2 md:pr-8 md:ml-32 ">
                   <h1 className="text-[15px] sm:text-2xl font-bold text-white">
@@ -97,18 +95,18 @@ const SadaqhDropdown = () => {
                   <p className="text-gray-200 w-full text-[10px] leading-3 sm:leading-5 sm:text-lg">
                     {detail.subTopic}
                   </p>
-                  <Link
+                  {/* <Link
                     to="/donate"
                     reloadDocument
                     className="bg-white text-black rounded-full px-3 py-1 sm:px-5 sm:py-3 text-lg self-start sm:block hidden "
                   >
-                    Donate
-                  </Link>
+                    
+                  </Link> */}
                 </div>
               </div>
             ))}
           </div>
-        )} */}
+        )}
         <div className="flex items-center justify-center">
           {isDropped ? (
             <DropdownIcon
