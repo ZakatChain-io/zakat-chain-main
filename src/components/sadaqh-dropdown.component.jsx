@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/sadaqah-dropdown-logo.svg";
 import { ReactComponent as DropdownIcon } from "../assets/dropdown-icon.svg";
-import FeedThePoor from "../assets/feed-the-poor.png";
+import FeedThePoor from "../assets/IMG-20240613-WA0020.jpg";
 import SupportAnOrphan from "../assets/support-an-orphan-through-school.png";
 import ProvideAccessToClean from "../assets/provide-access-to-clean-and-safe-water.png";
 // import HelpTreatASickMuslim from "../assets/help-treat-a-sick-muslim.png";
@@ -15,7 +15,7 @@ const SadaqhDropdown = () => {
   };
   const details = [
     {
-      topic: "Feed The Poor",
+      topic: "Feed 500 Family this Eid",
       subTopic: `  “He who feeds a hungry person will be fed by Allah on the Day
       of Resurrection” (Al-Tirmidhi).`,
       img: FeedThePoor,

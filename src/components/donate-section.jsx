@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import feed from "../../src/assets/images.jpeg";
 import tap from "../../src/assets/provide-access-to-clean-and-safe-water.png";
 import support from "../../src/assets/support-an-orphan-through-school.png";
-import crying from "../../src/assets/crying.jpeg";
+import food from "../../src/assets/IMG-20240613-WA0020.jpg";
 import { toast } from "react-toastify";
 import { payusdc, payusdt, paybnb } from "../contract con";
 import { useAddress } from "@thirdweb-dev/react";
@@ -98,9 +98,9 @@ const Donation = () => {
   const details = [
     {
       id: "poor",
-      topic: "Donate to the poor",
+      topic: "Feed 500 family this Eid ",
       subTopic: `"He who feeds an hungry person would be fed by Allah on the Day of Resurrection" (Al Tirmidhi)`,
-      img: crying,
+      img: food,
     },
     {
       id: "orphan",
