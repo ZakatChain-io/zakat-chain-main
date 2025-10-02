@@ -8,7 +8,7 @@ import Calculate from "./routes/calculate-zakat/page";
 import { ToastContainer} from "react-toastify";
 import { ChainProvider } from "./context/chain";
 import 'react-toastify/dist/ReactToastify.css';
-import Showcase from "./routes/showcase/Showcase";
+import Outreach from "./routes/outreach/Outreach";
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/about" element={<About />} />
           <Route path="/calculate-zakat" element={<Calculate />} />
-          <Route path="/showcase" element={<Showcase />} />
+          <Route path="/outreach" element={<Outreach />} />
         </Routes>
         <ToastContainer />   
       </ChainProvider>   

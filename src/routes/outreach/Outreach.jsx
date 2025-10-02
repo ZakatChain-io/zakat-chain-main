@@ -12,7 +12,7 @@ import ShowcaseGrid3 from "../../assets/showcase/showcase-grid-3.jpg";
 // If you want to import video files instead of using public folder
 // import OutreachVideo from "../../assets/videos/zakat-chain-outreach.mp4";
 
-const Showcase = () => {
+const Outreach = () => {
   return (
     <div>
       <div className="relative mx-[3%]">
@@ -35,7 +35,7 @@ const Showcase = () => {
           <Link className="min-w-[186px] text-center text-2xl font-medium py-[10px] px-4 bg-[rgba(255,150,6,1)] text-white rounded-[5px]">
             Donate now
           </Link>
-          <Link className="flex gap-x-1 text-center text-2xl font-medium border-2 rounded-[5px] border-[rgba(64,64,64,1)] py-[10px] px-4">
+          <Link to={"https://drive.google.com/drive/folders/102373-RltiDWdFm3UB1lLsDheeavZoXu"} className="flex gap-x-1 text-center text-2xl font-medium border-2 rounded-[5px] border-[rgba(64,64,64,1)] py-[10px] px-4">
             View more photos <FaGoogleDrive className="self-center" />
           </Link>
         </div>
@@ -73,14 +73,14 @@ const Showcase = () => {
           </div>
           <div className="max-w-[844px] h-full">
             <img
-              src={ShowcaseGrid2}
-              alt="showcase2"
+              src={"/images/outreach/zc-outreach-4.jpg"}
+              alt="Outreach 4"
               className="w-full h-full object-cover rounded-[10px]"
             />
           </div>
         </div>
 
-        <Link className="block text-center text-2xl font-medium py-[10px] px-4 bg-[rgba(23,22,62,1)] text-white rounded-[10px] mx-auto mt-[54px] w-fit">
+        <Link to={"https://drive.google.com/drive/folders/102373-RltiDWdFm3UB1lLsDheeavZoXu"} className="block text-center text-2xl font-medium py-[10px] px-4 bg-[rgba(23,22,62,1)] text-white rounded-[10px] mx-auto mt-[54px] w-fit">
           View more photos
         </Link>
 
@@ -146,10 +146,37 @@ const Showcase = () => {
             </p>
           </div> */}
         </div>
+
+
+        <div className="max-w-[742px] mx-auto text-center mt-[74px] mb-[28px]">
+          <h2 className="text-[rgba(0,0,0,1)] font-bold text-[57px] leading-[100%]">
+            {" "}
+            ZakatChain Outreach 2.0{" "}
+          </h2>
+          <p className="text-[40px] font-medium leading-[100%] text-[rgba(255,150,6,1)] mt-[4px]">
+            At a glance
+          </p>
+        </div>
+
+
+        <div
+          id="zc-outreach-1.0-video"
+          className="max-w-[1200px] mx-auto mb-[100px] px-4"
+        >
+          <VideoPlayer
+            src="https://res.cloudinary.com/dpuzj4j34/video/upload/f_auto,q_auto/v1759440523/zc-outreach-video-2-v2_fh4akn.mp4"
+            // poster="/videos/video-thumbnail.jpg"
+            className="w-full max-h-[675px] object-cover"
+            onPlay={() => console.log("ZakatChain video started playing")}
+            onEnded={() =>
+              console.log("Video completed - maybe show donation prompt?")
+            }
+          />
+        </div>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Showcase;
+export default Outreach;
