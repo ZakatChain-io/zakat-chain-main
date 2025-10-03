@@ -35,7 +35,7 @@ const HeroCarousel = () => {
     },
     {
       text: "Amount raised",
-      number: "$500+"
+      number: "$1500+"
     },
     {
       text: "Beneficiaries",
